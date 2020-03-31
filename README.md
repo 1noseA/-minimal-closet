@@ -16,6 +16,7 @@
 毎日
 
 ## 設計書
+https://app.diagrams.net/#G1fRviMhhhChFRmU9iRodaax_GNZHQvItQ
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1A9BcG6NJbHddkaWGqMHFYq5xGgQDkPhR992HZPUC7f8/edit?usp=sharing
