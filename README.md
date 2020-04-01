@@ -16,7 +16,14 @@
 毎日
 
 ## 設計書
+ER図
 https://app.diagrams.net/#G1fRviMhhhChFRmU9iRodaax_GNZHQvItQ
+
+テーブル定義書
+https://docs.google.com/spreadsheets/d/13iQRe0q3L4oSksETKsHX0SSRvbp0cHiT/edit#gid=397272164
+
+UI Flows
+https://www.draw.io/#G1Kd7LGtj608lye4Oci3xfuRkcgEuAend6
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1A9BcG6NJbHddkaWGqMHFYq5xGgQDkPhR992HZPUC7f8/edit?usp=sharing
