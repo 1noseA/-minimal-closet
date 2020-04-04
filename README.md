@@ -33,5 +33,3 @@ https://docs.google.com/spreadsheets/d/1LVmn4lmotH9WzyePGldbP1MD-38VipvoPy5411ss
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1A9BcG6NJbHddkaWGqMHFYq5xGgQDkPhR992HZPUC7f8/edit?usp=sharing
-
-
