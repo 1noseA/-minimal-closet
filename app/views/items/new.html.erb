@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>アイテム登録</h2>
+    <div class="row">
+
+      <div class="col-md-4">
+        <%= form_for (@item) do |f| %>
+          <%= f.attachment_field :item_image %>
+      </div>
+
+      <div class="col-md-8">
+          <span>アイテム名<%= f.text_field :name %></span><br>
+
+          <span>説明<%= f.text_area :text %></span><br>
+          <%= f.submit '保存する',class: 'btn-new-item'%>
+        <% end %>
+      </div>
+    </div>
+</div>
