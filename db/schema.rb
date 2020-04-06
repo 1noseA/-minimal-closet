@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_06_054452) do
+ActiveRecord::Schema.define(version: 2020_04_06_113601) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "constant"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "items", force: :cascade do |t|
     t.integer "user_id"
@@ -20,6 +27,20 @@ ActiveRecord::Schema.define(version: 2020_04_06_054452) do
     t.string "name"
     t.text "text"
     t.integer "count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "scenes", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "constant"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "seasons", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "constant"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

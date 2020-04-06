@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+
+      <div class="col-md-4">
+      <%= attachment_image_tag @item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400" %>
+      </div>
+
+      <div class="col-md-8">
+        <span>アイテム名<%= @item.name %></span><br>
+        <span>カテゴリー</span><br>
+        <span>シーン</span><br>
+        <span>シーズン</span><br>
+        <span>説明<%= @item.text %></span><br>
+        <%= f.submit 'カウント',class: 'btn-count'%>
+      </div>
+    </div>
+</div>

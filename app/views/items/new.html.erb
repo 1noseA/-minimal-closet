@@ -9,7 +9,18 @@
 
       <div class="col-md-8">
           <span>アイテム名<%= f.text_field :name %></span><br>
-
+          <%= f.fields_for :category do |c| %>
+            <h4><%= c.label :category_id, "カテゴリー" %></h4>
+            <%= c.collection_select :category_id, @categories, :id, :name, {include_blank: '--選択してください--'}  %>
+            <% end %>
+            <%= f.fields_for :scene do |s| %>
+            <h4><%= s.label :scene_id, "シーン" %></h4>
+            <%= s.collection_select :scene_id, @scenes, :id, :name, {include_blank: '--選択してください--'}  %>
+            <% end %>
+            <%= f.fields_for :season do |e| %>
+            <h4><%= e.label :season_id, "シーズン" %></h4>
+            <%= e.collection_select :season_id, @seasons, :id, :name, {include_blank: '--選択してください--'}  %>
+            <% end %>
           <span>説明<%= f.text_area :text %></span><br>
           <%= f.submit '保存する',class: 'btn-new-item'%>
         <% end %>
