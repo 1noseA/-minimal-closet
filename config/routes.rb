@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   resources :coordinates
   resources :calendars
 
-  #resources :categories
-  #resources :scenes
-  #resources :seasons
+  resources :categories
+  resources :scenes
+  resources :seasons
 
   root 'homes#top'
   get '/about' => 'homes#about' 

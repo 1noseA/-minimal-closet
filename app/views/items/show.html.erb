@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <%= attachment_image_tag @item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400" %>
+    </div>
+
+    <div class="col-md-8">
+        <span>アイテム名<%= @item.name %></span><br>
+        <span>カテゴリー<%= @item.category.name %></span><br>
+        <span>シーン<%= @item.scene.name %></span><br>
+        <span>シーズン<%= @item.season.name %></span><br>
+        <span>説明<%= @item.text %></span><br>
+        <span>着用回数<%= @item.count %>回</span>
+        カウントボタン<br>
+
+        <%= link_to "編集",edit_item_path(@item),class: 'btn btn-edit' %>
+        
+        <%= link_to "削除",item_path(@item),method: :delete, class: 'btn btn-delete' %><br>
+    </div>
+  </div>
+</div>
