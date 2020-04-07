@@ -2,17 +2,18 @@
   <div class="row">
     <div class="col-md-2">
       <h1><%= @user.name %>のクローゼット</h1>
-      #プロフィール欄
+      <%#プロフィール欄%>
     </div>
 
     <div class="col-md-10">
-      #アイテム一覧
+    <%= link_to "アイテムを追加",new_item_path %>
+      <%#アイテム一覧%>
     <% @items.each do |item| %>
       <%= link_to item_path(item) do %>
         <%= attachment_image_tag item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400" %>
       <% end %>
 
-      #いいねボタン
+      <%#いいねボタン%>
     <% end %>
     </div>
   </div>
