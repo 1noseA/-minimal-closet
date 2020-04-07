@@ -16,7 +16,8 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @user = current_user
+    @item.user_id = current_user.id
+    #@user = current_user
     @item.category_id = params[:item][:category][:category_id]
     @item.scene_id = params[:item][:scene][:scene_id]
     @item.season_id = params[:item][:season][:season_id]
@@ -44,11 +45,14 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to user_path(current_user)
   end
 
   private
   def item_params
-    params.require(:item).permit(:item_image,:name,:text,:category_id,:scene_id,:season_id)
+    params.require(:item).permit(:item_image,:name,:text,:category_id,:scene_id,:season_id,:user_id)
   end
   
 end
