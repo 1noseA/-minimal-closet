@@ -56,3 +56,9 @@ Season.create!(
 Season.create!(
   name: "冬"
 )
+Season.create!(
+  name: "春秋"
+)
+Season.create!(
+  name: "オールシーズン"
+)
