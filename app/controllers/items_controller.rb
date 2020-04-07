@@ -17,7 +17,6 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user_id = current_user.id
-    #@user = current_user
     @item.category_id = params[:item][:category][:category_id]
     @item.scene_id = params[:item][:scene][:scene_id]
     @item.season_id = params[:item][:season][:season_id]
@@ -33,13 +32,23 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @categories = Category.all
+    @scenes = Scene.all
+    @seasons = Season.all
   end
 
   def update
-    item = Item.find(params[:id])
-    if item.update(item_params)
+    @item = Item.find(params[:id])
+    @item.user_id = current_user.id
+    @item.category_id = params[:item][:category][:category_id]
+    @item.scene_id = params[:item][:scene][:scene_id]
+    @item.season_id = params[:item][:season][:season_id]
+    if @item.update(item_params)
     redirect_to user_path(current_user)
     else
+    @categories = Category.all
+    @scenes = Scene.all
+    @seasons = Season.all
     render :edit
     end
   end

@@ -1,18 +1,29 @@
 <div class="container">
   <h2>アイテム編集</h2>
-    <div class="row">
-
-      <div class="col-md-4">
-        <%= form_for (@item) do |f| %>
+    <%= form_for (@item) do |f| %>
+      <div class="row">
+        <div class="col-md-4">
           <%= f.attachment_field :item_image %>
-      </div>
+        </div>
 
-      <div class="col-md-8">
+        <div class="col-md-8">
           <span>アイテム名<%= f.text_field :name %></span><br>
 
+          <%= f.fields_for :category do |c| %>
+          <span>カテゴリー<%= c.collection_select :category_id, @categories, :id, :name, selected: @item.category_id  %></span><br>
+          <% end %>
+  
+          <%= f.fields_for :scene do |s| %>
+          <span>シーン<%= s.collection_select :scene_id, @scenes, :id, :name, selected: @item.scene_id  %></span><br>
+          <% end %>
+  
+          <%= f.fields_for :season do |season| %>
+          <span>シーズン<%= season.collection_select :season_id, @seasons, :id, :name, selected: @item.season_id  %></span><br>
+          <% end %>
+
           <span>説明<%= f.text_area :text %></span><br>
-          <%= f.submit '変更を更新する',class: 'btn-new-item'%>
-        <% end %>
+          <%= f.submit "変更",class: 'btn-new-item'%>
+        </div>
       </div>
-    </div>
+    <% end %>   
 </div>
