@@ -16,12 +16,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
+    @user = current_user
     @item.category_id = params[:item][:category][:category_id]
     @item.scene_id = params[:item][:scene][:scene_id]
     @item.season_id = params[:item][:season][:season_id]
-    #redirect_to user_path(current_user)
-    redirect_to items_path
+    if @item.save!
+    redirect_to user_path(current_user)
     else
     @categories = Category.all
     @scenes = Scene.all

@@ -7,11 +7,11 @@
 
       <div class="col-md-8">
         <span>アイテム名<%= @item.name %></span><br>
-        <span>カテゴリー</span><br>
-        <span>シーン</span><br>
-        <span>シーズン</span><br>
+        <span>カテゴリー<%= @item.category.name %></span><br>
+        <span>シーン<%= @item.scene.name %></span><br>
+        <span>シーズン<%= @item.season.name %></span><br>
         <span>説明<%= @item.text %></span><br>
-        <%= f.submit 'カウント',class: 'btn-count'%>
+        
       </div>
     </div>
 </div>

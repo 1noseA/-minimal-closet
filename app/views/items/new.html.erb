@@ -18,9 +18,9 @@
           <span>シーン<%= s.collection_select :scene_id, @scenes, :id, :name, {include_blank: '--選択してください--'}  %></span><br>
           <% end %>
 
-          <%= f.fields_for :season do |e| %>
-          <span>シーズン<%= e.collection_select :season_id, @seasons, :id, :name, {include_blank: '--選択してください--'}  %></span><br>
-            <% end %>
+          <%= f.fields_for :season do |season| %>
+          <span>シーズン<%= season.collection_select :season_id, @seasons, :id, :name, {include_blank: '--選択してください--'}  %></span><br>
+          <% end %>
 
           <span>説明<%= f.text_area :text %></span><br>
           <%= f.submit '保存する',class: 'btn-new-item'%>

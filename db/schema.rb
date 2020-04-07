@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_04_06_113601) do
     t.integer "user_id"
     t.integer "category_id"
     t.integer "scene_id"
+    t.integer "season_id"
     t.string "item_image_id"
     t.string "name"
     t.text "text"
