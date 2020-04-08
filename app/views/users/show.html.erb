@@ -2,10 +2,18 @@
   <div class="row">
     <div class="col-md-2">
       <h4><%= @user.name %>の<br>クローゼット</h4>
+      <table class="table">
       <%#プロフィール欄%>
       <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %><br>
-      <span>名前<%= @user.name %></span><br>
-      <span>自己紹介<%= @user.introduction %></span><br>
+        <tr>
+          <td>名前</td>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
+          <td>自己紹介</td>
+          <td><%= @user.introduction %></td>
+        </tr>
+      </table>
       <%= link_to "編集",edit_user_path(current_user), class: 'btn btn-edit' %>
     </div>
 
