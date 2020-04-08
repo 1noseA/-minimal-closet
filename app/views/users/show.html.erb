@@ -1,12 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2">
-      <h1><%= @user.name %>のクローゼット</h1>
+      <h4><%= @user.name %>の<br>クローゼット</h4>
       <%#プロフィール欄%>
+      <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %><br>
+      <span>名前<%= @user.name %></span><br>
+      <span>自己紹介<%= @user.introduction %></span><br>
+      <%= link_to "編集",edit_user_path(current_user), class: 'btn btn-edit' %>
     </div>
 
     <div class="col-md-10">
-    <%= link_to "アイテムを追加",new_item_path %>
+    <%= link_to "アイテムを追加",new_item_path %><br>
       <%#アイテム一覧%>
     <% @items.each do |item| %>
       <%= link_to item_path(item) do %>

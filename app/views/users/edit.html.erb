@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>プロフィール編集</h2>
+    <%= form_for(@user) do |f| %>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.attachment_field :profile_image %>
+        </div>
+
+        <div class="col-md-8">
+          <span>名前<%= f.text_field :name %></span><br>
+          <span>自己紹介<%= f.text_field :introduction %></span><br>
+          <%= f.submit "更新" %>
+        </div>
+      </div>
+    <% end %>
+</div>
