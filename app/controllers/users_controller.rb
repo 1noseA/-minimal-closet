@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.page(params[:page]).per(10)
+    
     @user = current_user
-    #@items = Item.all
-    #@item = Item.find(params[:id])
+#binding.pry
   end
 
   def show
     @user = User.find(params[:id])
-    @items = Item.all
+    @items = @user.items.page(params[:page])
   end
 
   def edit

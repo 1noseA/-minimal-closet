@@ -21,23 +21,19 @@
     <h2>いろいろなクローゼットを見る</h2>
     <span>全件</span>
       <table class="table">
-        <thead>
-          <tr>
-            <th>名前</th>
-            <th>クローゼットの中</th>
-          </tr>
-        </thead>
-        <tbody>
         <% @users.each do |user| %>
           <tr>
             <td>
               <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %><br>
               <%= user.name %>
+              </td>
+              <td>
+              <% user.items.each do |item| %>
+                <%= attachment_image_tag item, :item_image, :fill, 100, 100, format: 'jpeg', fallback: "item_no_image.jpg",size:'150x200' %>
+              <% end %>
             </td>
-            <td></td>
           </tr>
         <% end %>
-        </tbody>
       </table>
     </div>
   </div>
