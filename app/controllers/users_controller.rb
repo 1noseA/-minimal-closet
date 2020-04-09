@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
   def index
-    @users = User.page(params[:page]).per(10)
-    
+    @users = User.all.page(params[:page]).per(10)
     @user = current_user
-#binding.pry
+    @count = User.all
   end
 
   def show

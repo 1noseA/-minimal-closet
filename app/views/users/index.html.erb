@@ -1,6 +1,6 @@
 <div class="container"> 
   <div class="row">
-  <div class="col-md-2">
+    <div class="col-md-2">
       <h4><%= @user.name %>の<br>クローゼット</h4>
       <table class="table">
       <%#プロフィール欄%>
@@ -19,7 +19,7 @@
 
     <div class="col-md-10">
     <h2>いろいろなクローゼットを見る</h2>
-    <span>全件</span>
+    <span>全<%= @count.count %>件</span>
       <table class="table">
         <% @users.each do |user| %>
           <tr>
