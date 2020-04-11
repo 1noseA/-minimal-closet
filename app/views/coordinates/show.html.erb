@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <%= attachment_image_tag @coordinate, :image, format: 'jpeg', size: "300x400" %>
+    </div>
+
+    <div class="col-md-8">
+      <p>説明<%= @coordinate.text %></p><br>
+
+      <%= link_to "編集",edit_coordinate_path(@coordinate),class: 'btn btn-edit' %>
+        
+      <%= link_to "削除",coordinate_path(@coordinate),method: :delete, class: 'btn btn-delete' %><br>
+    </div>
+  </div>
+</div>

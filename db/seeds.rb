@@ -62,3 +62,59 @@ Season.create!(
 Season.create!(
   name: "オールシーズン"
 )
+
+User.create!(
+  name: "aaa",
+  email: "aa@aa",
+  password: "aaaaaa"
+)
+User.create!(
+  name: "bbb",
+  email: "bb@bb",
+  password: "bbbbbb"
+)
+User.create!(
+  name: "ccc",
+  email: "cc@cc",
+  password: "cccccc"
+)
+User.create!(
+  name: "ddd",
+  email: "dd@dd",
+  password: "dddddd"
+)
+User.create!(
+  name: "eee",
+  email: "ee@ee",
+  password: "eeeeee"
+)
+User.create!(
+  name: "fff",
+  email: "ff@ff",
+  password: "ffffff"
+)
+User.create!(
+  name: "ggg",
+  email: "gg@gg",
+  password: "gggggg"
+)
+User.create!(
+  name: "hhh",
+  email: "hh@hh",
+  password: "hhhhhh"
+)
+User.create!(
+  name: "iii",
+  email: "ii@ii",
+  password: "iiiiii"
+)
+User.create!(
+  name: "jjj",
+  email: "jj@jj",
+  password: "jjjjjj"
+)
+User.create!(
+  name: "kkk",
+  email: "kk@kk",
+  password: "kkkkkk"
+)
