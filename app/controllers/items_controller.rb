@@ -21,12 +21,12 @@ class ItemsController < ApplicationController
     @item.scene_id = params[:item][:scene][:scene_id]
     @item.season_id = params[:item][:season][:season_id]
     if @item.save!
-    redirect_to user_path(current_user)
+      redirect_to user_path(current_user)
     else
-    @categories = Category.all
-    @scenes = Scene.all
-    @seasons = Season.all
-    render :new
+      @categories = Category.all
+      @scenes = Scene.all
+      @seasons = Season.all
+      render :new
     end
   end
 
@@ -44,12 +44,12 @@ class ItemsController < ApplicationController
     @item.scene_id = params[:item][:scene][:scene_id]
     @item.season_id = params[:item][:season][:season_id]
     if @item.update(item_params)
-    redirect_to user_path(current_user)
+      redirect_to user_path(current_user)
     else
-    @categories = Category.all
-    @scenes = Scene.all
-    @seasons = Season.all
-    render :edit
+      @categories = Category.all
+      @scenes = Scene.all
+      @seasons = Season.all
+      render :edit
     end
   end
 
