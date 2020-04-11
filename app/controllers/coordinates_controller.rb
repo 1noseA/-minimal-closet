@@ -1,5 +1,7 @@
 class CoordinatesController < ApplicationController
   def index
+    @coordinates = Coordinate.all
+    @user = current_user
   end
 
   def show
