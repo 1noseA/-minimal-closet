@@ -1,7 +1,8 @@
 class CoordinatesController < ApplicationController
   def index
-    @coordinates = Coordinate.all.page(params[:page]).per(50)
     @user = current_user
+    @coordinate = Coordinate.where(user_id: params[:user_id])
+    @coordinates = @user.coordinates.page(params[:page]).per(50)
   end
 
   def show
