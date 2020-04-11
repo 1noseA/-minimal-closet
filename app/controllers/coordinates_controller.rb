@@ -3,6 +3,7 @@ class CoordinatesController < ApplicationController
   end
 
   def show
+    @coordinate = Coordinate.find(params[:id])
   end
 
   def new
@@ -34,6 +35,9 @@ class CoordinatesController < ApplicationController
   end
 
   def destroy
+    @coordinate = Coordinate.find(params[:id])
+    @coordinate.destroy
+    redirect_to coordinates_path
   end
 
   private
