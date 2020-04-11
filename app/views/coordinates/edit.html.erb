@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>コーディネート編集</h2>
+    <%= form_for (@coordinate) do |f| %>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.attachment_field :image %>
+        </div>
+        <div class="col-md-8">
+          <p>説明<%= f.text_area :text %></p><br>
+          <%= f.submit "更新",class: 'btn-new-coordinate'%>
+        </div>
+      </div>
+    <% end %>     
+</div>

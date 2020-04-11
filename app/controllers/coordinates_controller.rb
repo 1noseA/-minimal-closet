@@ -20,9 +20,17 @@ class CoordinatesController < ApplicationController
   end
 
   def edit
+    @coordinate = Coordinate.find(params[:id])
   end
 
   def update
+    @coordinate = Coordinate.find(params[:id])
+    @coordinate.user_id = current_user.id
+    if @coordinate.update(coordinate_params)
+      redirect_to coordinates_path
+    else
+      render :edit
+    end
   end
 
   def destroy
