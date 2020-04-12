@@ -7,10 +7,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #ユーザーが登録したアイテム
     @items = @user.items
     @categories = Category.all
-    #@categories = @items.where(category_id: params[:category_id])
   end
 
   def edit
