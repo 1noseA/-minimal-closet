@@ -7,7 +7,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @items = @user.items
+    @items = @user.items.select(:category_id).distinct
+    #.order(:category_id)
     @categories = Category.all
   end
 
