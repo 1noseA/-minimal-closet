@@ -10,8 +10,9 @@
         <span>シーン<%= @item.scene.name %></span><br>
         <span>シーズン<%= @item.season.name %></span><br>
         <span>説明<%= @item.text %></span><br>
-        <span>着用回数<%= @item.count %>回</span>
-        カウントボタン<br>
+        <span>着用回数<%= @item.likes.count %>回
+        <%= button_to "カウントボタン", item_likes_path(@item),method: :post %>
+        </span><br>
 
         <%= link_to "編集",edit_item_path(@item),class: 'btn btn-edit' %>
         
