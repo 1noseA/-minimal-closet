@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @items = @user.items.select(:category_id).distinct
+    #binding.pry
     #.order(:category_id)
     @categories = Category.all
   end
