@@ -5,11 +5,12 @@ class CoordinatesController < ApplicationController
   end
 
   def show
-    @user = User.find_by(params[:user_id])
+    @user = User.find(params[:user_id])
     @coordinate = Coordinate.find(params[:id])
   end
 
   def new
+    @user = User.find(params[:user_id])
     @coordinate = Coordinate.new
   end
 
@@ -24,6 +25,7 @@ class CoordinatesController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:user_id])
     @coordinate = Coordinate.find(params[:id])
   end
 
