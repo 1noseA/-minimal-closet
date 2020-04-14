@@ -2,19 +2,8 @@
   <div class="row">
     <div class="col-md-2">
       <h4><%= @user.name %>の<br>コーディネート</h4>
-      <table class="table">
       <%#プロフィール欄%>
-      <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %><br>
-        <tr>
-          <td>名前</td>
-          <td><%= @user.name %></td>
-        </tr>
-        <tr>
-          <td>自己紹介</td>
-          <td><%= @user.introduction %></td>
-        </tr>
-      </table>
-      <%= link_to "編集",edit_user_path(current_user), class: 'btn btn-edit' %>
+      <%= render 'users/profile', user: @user %>
     </div>
 
     <div class="col-md-10">

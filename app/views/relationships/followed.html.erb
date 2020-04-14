@@ -1,0 +1,6 @@
+<h4>フォロワー</h4>
+<% if @users.count > 0 %>
+  <%= render '/users/followlist', users: @users %>
+<% else %>
+  <p>ユーザーはいません</p>
+<% end %>
