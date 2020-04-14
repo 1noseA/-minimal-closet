@@ -18,22 +18,24 @@
     </div>
 
     <div class="col-md-10">
-    <p>着用回数ベスト３</p>
+    <h4>着用回数ベスト３</h4>
       <div class="item_index">
         <% @my_ranks.each.with_index(1) do |item,i| %>
           <div class="item_rank">
             <p>第<%= i %>位</p>
             <%= attachment_image_tag item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "150x200" %>
+            <p>着用回数<%= item.likes.count %>回</p>
           </div>
         <% end %>
       </div>
 
-    <p>着用回数ワースト３</p>
+    <h4>着用回数ワースト３</h4>
       <div class="item_index">
         <% @my_worst_ranks.each.with_index(1) do |item,i| %>
           <div class="item_rank">
             <p>第<%= i %>位</p>
             <%= attachment_image_tag item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "150x200" %>
+            <p>着用回数<%= item.likes.count %>回</p>
           </div>
         <% end %>
       </div>
