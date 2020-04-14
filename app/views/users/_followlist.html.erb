@@ -1,7 +1,7 @@
 <table class = "table">
   <% users.each do |user| %>
     <tr>
-      <td><%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no-image.jpg") %></td>
+      <td><%= attachment_image_tag user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %></td>
       <td><%= user.name %></td>
       <td><%= user.introduction %>
       <td>フォロー数：<%= user.follower.count %></td>
