@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users,only: [:index,:show,:edit,:update]
-  resources :items
-  resources :coordinates
+  resources :users,only: [:index,:show,:edit,:update] do
+    resources :coordinates
+  end
+
+  resources :items do
+    resource :likes,only: [:create]
+  end
+  
   resources :calendars
 
   resources :categories

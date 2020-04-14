@@ -7,9 +7,9 @@
     <div class="col-md-8">
       <p>説明<%= @coordinate.text %></p><br>
 
-      <%= link_to "編集",edit_coordinate_path(@coordinate),class: 'btn btn-edit' %>
+      <%= link_to "編集",edit_user_coordinate_path(current_user,@coordinate),class: 'btn btn-edit' %>
         
-      <%= link_to "削除",coordinate_path(@coordinate),method: :delete, class: 'btn btn-delete' %><br>
+      <%= link_to "削除",user_coordinate_path(current_user,@coordinate),method: :delete, class: 'btn btn-delete' %><br>
     </div>
   </div>
 </div>

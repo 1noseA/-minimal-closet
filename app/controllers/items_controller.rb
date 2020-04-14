@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
+    @all_ranks = Item.find(Like.group(:item_id).order('count(item_id) desc').limit(3).pluck(:item_id))
+    @my_ranks = @all_ranks.select{ |item| item.user_id == current_user.id }
+    @worst_ranks = Item.find(Like.group(:item_id).order('count(item_id) asc').limit(3).pluck(:item_id))
+    @my_worst_ranks = @worst_ranks.select{ |item| item.user_id == current_user.id }
   end
 
   def show

@@ -1,6 +1,6 @@
 <div class="container">
   <h2>コーディネート編集</h2>
-    <%= form_for (@coordinate) do |f| %>
+    <%= form_for [@user,@coordinate] do |f| %>
       <div class="row">
         <div class="col-md-4">
           <%= f.attachment_field :image %>
