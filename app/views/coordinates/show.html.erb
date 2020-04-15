@@ -8,17 +8,9 @@
       <p>説明<%= @coordinate.text %></p><br>
 
       <%#いいねボタン%>
-        <% if @coordinate.favorited_by?(current_user) %>
-          <%= link_to user_coordinate_favorites_path(@user, @coordinate), method: :delete do %>
-            <i class="fas fa-heart"></i>
-            <%= @coordinate.favorites.count %> いいね
-          <% end %>
-        <% else %>
-          <%= link_to user_coordinate_favorites_path(@user, @coordinate), method: :post do %>
-            <i class="far fa-heart"></i>
-            <%= @coordinate.favorites.count %> いいね
-          <% end %>
-        <% end %><br>
+        <div id="favorites_buttons_<%= @coordinate.id %>">
+          <%= render partial: 'favorites/favorite', locals: {coordinate: @coordinate} %>
+        </div>
 
       <%= link_to "編集",edit_user_coordinate_path(current_user,@coordinate),class: 'btn btn-edit' %>
         
