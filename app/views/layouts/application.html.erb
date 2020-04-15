@@ -20,13 +20,12 @@
         <% if user_signed_in? %>
         <li class="nav-item p-2 mr-5 rounded"><%= link_to 'Myクローゼット',user_path(current_user), class: "text-decoration-none nav-text" %></li>
         <li class="nav-item p-2 mr-5 rounded"><%= link_to 'コーディネート',user_coordinates_path(current_user), class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-5 rounded"><%= link_to 'カレンダー',calendars_path, class: "text-decoration-none nav-text" %></li>
+        <%# <li class="nav-item p-2 mr-5 rounded"><%= link_to 'カレンダー',calendars_path, class: "text-decoration-none nav-text" %>
         <li class="nav-item p-2 mr-5 rounded"><%= link_to 'データ',items_path, class: "text-decoration-none nav-text" %></li>
         <li class="nav-item p-2 mr-5 rounded"><%= link_to 'いろんなクローゼット',users_path, class: "text-decoration-none nav-text" %></li>
         <li class="nav-item p-2 mr-5 rounded"><%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class: "text-decoration-none nav-text" %></li>
         <% else %>
         <li class="nav-item p-2 mr-5 rounded"><%= link_to '初めての人へ',about_path, class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-5 rounded"><%= link_to 'いろんなクローゼット',users_path, class: "text-decoration-none nav-text" %></li>
         <li class="nav-item p-2 mr-5 rounded"><%= link_to '新規登録',new_user_registration_path, class: "text-decoration-none nav-text" %></li>
         <li class="nav-item p-2 mr-5 rounded"><%= link_to 'ログイン',new_user_session_path, class: "text-decoration-none nav-text" %></li>
         <% end %>
