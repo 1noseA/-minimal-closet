@@ -1,0 +1,3 @@
+<span>着用回数<%= item.likes.count %>回
+  <%= link_to "カウントボタン", item_likes_path(item),method: :post, remote: true %>
+</span>
