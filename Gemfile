@@ -73,6 +73,7 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'rubocop-airbnb'
+gem 'font-awesome-sass'
 
 gem 'dotenv-rails'
 group :production do

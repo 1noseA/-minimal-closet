@@ -16,6 +16,20 @@
         <table>
           <tr>
             <td>
+              <%#いいねボタン%>
+              <% if coordinate.favorited_by?(current_user) %>
+                  <%= link_to user_coordinate_favorites_path(@user, coordinate), method: :delete do %>
+                    <i class="fas fa-heart"></i>
+                    <%= coordinate.favorites.count %> いいね
+                  <% end %>
+              <% else %>
+                  <%= link_to user_coordinate_favorites_path(@user, coordinate), method: :post do %>
+                    <i class="far fa-heart"></i>
+                    <%= coordinate.favorites.count %> いいね
+                  <% end %>
+              <% end %>
+
+            <%#コーディネート一覧表示%>
             <%= link_to user_coordinate_path(@user, coordinate) do %>
               <%= attachment_image_tag coordinate, :image, format: 'jpeg', size: "150x200" %>
             <% end %>
