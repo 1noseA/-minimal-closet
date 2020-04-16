@@ -13,3 +13,7 @@ div.item_rank {
   width: calc((100% - #{$m * ($n - 1) * 2 + $m * 2}) / #{$n});
   margin: $m;
 }
+
+.img_form{
+  display: none;
+}
