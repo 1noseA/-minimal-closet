@@ -3,7 +3,10 @@
     <%= form_for(@user) do |f| %>
       <div class="row">
         <div class="col-md-4">
-          <%= f.attachment_field :profile_image %>
+          <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100", id: "prev-img" %>
+          <label for="post_img" class= "btn btn-img">
+          <%= f.attachment_field :profile_image, id: "post_img", class: "img_form" %>
+          画像選択</label>
         </div>
 
         <div class="col-md-8">
