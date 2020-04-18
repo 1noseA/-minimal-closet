@@ -1,13 +1,19 @@
 class ItemsController < ApplicationController
   def index
-    # ベスト３
-    @all_ranks = Item.find(Like.group(:item_id).order('count(item_id) desc').limit(3).pluck(:item_id))
-    #@my_ranks = @all_ranks.select{ |item| item.user_id == current_user.id }
-    @my_ranks = Item.find(current_user.likes.group(:item_id).order('count(item_id) desc').limit(3).pluck(:item_id))
-    # ワースト３
+    #ベスト３
+    @best_ranks = Item.find(current_user.likes.group(:item_id).order('count(item_id) desc').limit(3).pluck(:item_id))
+    
+    #ワースト３
+    #着用回数０のアイテムを左外部結合で抽出
     @unlikes = Item.left_joins(:likes).where(likes:{id: nil}).limit(3)
-    @worst_ranks = Item.find(Like.group(:item_id).order('count(item_id) asc').limit(3).pluck(:item_id))
-    @my_worst_ranks = Item.find(current_user.likes.group(:item_id).order('count(item_id) asc').limit(3).pluck(:item_id))
+    #@worst_ranksは着用回数１以上のアイテムを順位付け
+    #着用回数０が３以上の場合とそれ以外で分ける
+    #@unlikesと@worst_ranks合わせて３アイテム表示になるように
+    if @unlikes.count >=3
+      @worst_ranks = @unlikes
+    else
+      @worst_ranks = @unlikes.to_a + Item.find(current_user.likes.group(:item_id).order('count(item_id) asc').limit(3-@unlikes.count).pluck(:item_id))
+    end
   end
 
   def show
