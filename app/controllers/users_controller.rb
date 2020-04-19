@@ -7,9 +7,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @items = @user.items.select(:category_id).distinct
-    #binding.pry
-    #.order(:category_id)
+    @items = @user.items.select(:category_id).distinct.order(:category_id)
+    #distinctで重複するレコードを削除
     @categories = Category.all
   end
 
