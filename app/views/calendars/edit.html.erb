@@ -1,12 +1,21 @@
-<h4>編集する</h4>
-<%= form_for [@user,@calendar] do |f| %>
+<div class="container">
+  <h4>コーディネートを編集する</h4>
+    <%= form_for [current_user,@calendar] do |f| %>
+      <div class="row">
+        <div class="col-md-4">
+          <%= attachment_image_tag @calendar, :day_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400", id: "prev-img" %>
+          <label for="post_img" class= "btn btn-img">
+          <%= f.attachment_field :day_image, id: "post_img", class: "img_form" %>
+          画像選択</label>
+        </div>
 
-  <%= f.file_field :day_image %>
+        <div class="col-md-8">
+          <%= f.datetime_select :start_time %><br>
 
-  <%= f.datetime_select :start_time %>
+          <%= f.text_field :text %><br>
 
-  <%= f.text_field :text %>
-
-  <%= f.submit "変更を更新" %>
-
-<% end %>
+          <%= f.submit "変更を更新する" %>
+        </div>
+      </div>
+    <% end %>
+</div>

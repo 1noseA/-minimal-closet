@@ -1,17 +1,15 @@
 class CalendarsController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
-    @calendars = @user.calendars
-  end
-
-  def new
-    @user = User.find(params[:user_id])
-    @calendar = Calendar.new
+    @calendars = current_user.calendars
   end
 
   def show
-    @user = User.find(params[:user_id])
     @calendar = Calendar.find(params[:id])
+  end
+
+  def new
+    @user = current_user
+    @calendar = Calendar.new
   end
 
   def create
@@ -25,22 +23,20 @@ class CalendarsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
     @calendar = Calendar.find(params[:id])
     @calendar.destroy
-    redirect_to user_calendars_path(@user), notice:"削除しました"
+    redirect_to user_calendars_path(current_user), notice:"削除しました"
   end
 
   def edit
-    @user = User.find(params[:user_id])
     @calendar = Calendar.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:user_id])
     @calendar = Calendar.find(params[:id])
+    @calendar.user_id = current_user.id
     if @calendar.update(calendar_params)
-      redirect_to user_calendars_path(@user), notice: "編集しました"
+      redirect_to user_calendars_path(current_user), notice: "編集しました"
     else
       render :edit
     end
