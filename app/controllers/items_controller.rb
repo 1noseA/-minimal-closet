@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     #ベスト３
     @best_ranks = Item.find(current_user.likes.group(:item_id).order('count(item_id) desc').limit(3).pluck(:item_id))
