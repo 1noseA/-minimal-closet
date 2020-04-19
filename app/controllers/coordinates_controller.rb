@@ -23,6 +23,7 @@ class CoordinatesController < ApplicationController
     if @coordinate.save
       redirect_to user_coordinates_path(current_user)
     else
+      @user = User.find(params[:user_id])
       render :new
     end
   end

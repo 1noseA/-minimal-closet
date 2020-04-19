@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
     @item.category_id = params[:item][:category][:category_id]
     @item.scene_id = params[:item][:scene][:scene_id]
     @item.season_id = params[:item][:season][:season_id]
-    if @item.save!
+    if @item.save
       redirect_to user_path(current_user)
     else
       @categories = Category.all

@@ -1,5 +1,6 @@
 <div class="container">
   <h4>コーディネートを編集する</h4>
+  <%= render partial: 'items/error', locals: {image: @calendar} %>
     <%= form_for [current_user,@calendar] do |f| %>
       <div class="row">
         <div class="col-md-4">

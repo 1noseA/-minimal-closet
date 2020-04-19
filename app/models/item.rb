@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :user
   attachment :item_image
+  validates :item_image, presence: true
   belongs_to :category,optional: true
   belongs_to :scene,optional: true
   belongs_to :season,optional: true

@@ -18,9 +18,10 @@ class CalendarsController < ApplicationController
   def create
     @calendar = Calendar.new(calendar_params)
     @calendar.user_id = current_user.id
-    if @calendar.save!
+    if @calendar.save
       redirect_to user_calendars_path(current_user)
     else
+      @user = current_user
       render :new
     end
   end

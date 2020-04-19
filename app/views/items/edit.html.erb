@@ -1,5 +1,6 @@
 <div class="container">
   <h2>アイテム編集</h2>
+  <%= render partial: 'items/error', locals: {image: @item} %>
     <%= form_for (@item) do |f| %>
       <div class="row">
         <div class="col-md-4">
