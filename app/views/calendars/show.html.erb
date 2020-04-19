@@ -1,0 +1,6 @@
+<%= attachment_image_tag @calendar, :day_image, format: 'jpeg',  size: "300x400" %>
+
+<%= @calendar.content %>
+
+<%= link_to "編集する", edit_user_calendar_path(@calendar,@user) %> |
+<%= link_to "戻る", user_calendars_path(@user) %>
