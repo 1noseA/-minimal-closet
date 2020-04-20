@@ -13,3 +13,9 @@ ja:
         introduction: 自己紹介
         created_at: 作成日
         updated_at: 更新日
+      calendar:
+        day_image: 画像
+      coordinate:
+        image: コーディネート画像
+      item:
+        item_image: アイテム画像
