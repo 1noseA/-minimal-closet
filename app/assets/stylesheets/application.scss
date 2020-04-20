@@ -17,3 +17,21 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+
+ //カラーの変数を定義
+$main-color: #555555;
+$btn-color: #00afcc;
+$danger-color: #ea5549;
+
+* {
+  color: $main-color;
+  font-family: system-ui, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体";
+}
+
+@media all and (-ms-high-contrast: none) {
+  font-family: "メイリオ", Meiryo, sans-serif;
+}
+
+header,footer {
+	background-color: $main-color;
+}
