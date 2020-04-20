@@ -20,16 +20,16 @@
       </ul>
       <ul class="navbar-nav ml-auto my-3 mr-2">
         <% if user_signed_in? %>
-        <li class="nav-item p-2 mr-3 rounded"><%= link_to "私のクローゼット",user_path(current_user), class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-3 rounded"><%= link_to "コーディネート",user_coordinates_path(current_user), class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-3 rounded"><%= link_to "カレンダー",user_calendars_path(current_user), class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-3 rounded"><%= link_to "データ",items_path, class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-3 rounded"><%= link_to "全クローゼット",users_path, class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-3 rounded"><%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3 rounded"><i class="fas fa-user"></i><%= link_to "Myクローゼット",user_path(current_user), class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3 rounded"><i class="fas fa-tshirt"></i><%= link_to "コーディネート",user_coordinates_path(current_user), class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3 rounded"><i class="far fa-calendar-alt"></i><%= link_to "カレンダー",user_calendars_path(current_user), class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3 rounded"><i class="fas fa-signal"></i><%= link_to "データ",items_path, class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3 rounded"><i class="fas fa-users"></i><%= link_to "Allクローゼット",users_path, class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3 rounded"><i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: "text-decoration-none nav-text" %></li>
         <% else %>
-        <li class="nav-item p-2 mr-3 rounded"><%= link_to "サイトについて",about_path, class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-3 rounded"><%= link_to "新規会員登録",new_user_registration_path, class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-3 rounded"><%= link_to "ログイン",new_user_session_path, class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3 rounded"><i class="far fa-hand-point-right"></i><%= link_to "サイトについて",about_path, class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3 rounded"><i class="fas fa-user-plus"></i><%= link_to "新規会員登録",new_user_registration_path, class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3 rounded"><i class="fas fa-sign-in-alt"></i><%= link_to "ログイン",new_user_session_path, class: "text-decoration-none nav-text" %></li>
         <% end %>
       </ul>
     </header>
