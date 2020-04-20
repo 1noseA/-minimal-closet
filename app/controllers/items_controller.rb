@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :correct_user, only: [:edit,:update]
+
   def index
     #ベスト３
     @best_ranks = Item.find(current_user.likes.group(:item_id).order('count(item_id) desc').limit(3).pluck(:item_id))
@@ -17,6 +20,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
     @item = Item.find(params[:id])
   end
 
@@ -33,7 +37,7 @@ class ItemsController < ApplicationController
     @item.category_id = params[:item][:category][:category_id]
     @item.scene_id = params[:item][:scene][:scene_id]
     @item.season_id = params[:item][:season][:season_id]
-    if @item.save!
+    if @item.save
       redirect_to user_path(current_user)
     else
       @categories = Category.all
@@ -75,6 +79,13 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:item_image,:name,:text,:category_id,:scene_id,:season_id,:user_id)
+  end
+
+  def correct_user
+    user = User.find(params[:id])
+    if current_user != user
+      redirect_to user_path(current_user)
+    end
   end
   
 end

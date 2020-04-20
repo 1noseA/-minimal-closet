@@ -1,4 +1,7 @@
 class CalendarsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :correct_user
+
   def index
     @calendars = current_user.calendars
   end
@@ -15,9 +18,10 @@ class CalendarsController < ApplicationController
   def create
     @calendar = Calendar.new(calendar_params)
     @calendar.user_id = current_user.id
-    if @calendar.save!
+    if @calendar.save
       redirect_to user_calendars_path(current_user)
     else
+      @user = current_user
       render :new
     end
   end
@@ -45,5 +49,12 @@ class CalendarsController < ApplicationController
   private
   def calendar_params
     params.require(:calendar).permit(:user_id, :day_image, :text, :start_time)
+  end
+
+  def correct_user
+    user = User.find(params[:user_id])
+    if current_user != user
+      redirect_to user_path(current_user)
+    end
   end
 end

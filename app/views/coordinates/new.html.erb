@@ -1,5 +1,6 @@
 <div class="container">
   <h2>コーディネート登録</h2>
+  <%= render partial: 'items/error', locals: {image: @coordinate} %>
     <%= form_for [@user, @coordinate] do |f| %>
       <div class="row">
         <div class="col-md-4">
@@ -9,7 +10,7 @@
           画像選択</label>
         </div>
         <div class="col-md-8">
-          <p>説明<%= f.text_area :text %></p><br>
+          <p>説明<%= f.text_area :text, placeholder: "「お出かけコーデ」など" %></p><br>
           <%= f.submit "保存",class: 'btn-new-coordinate'%>
         </div>
       </div>

@@ -15,9 +15,11 @@
           <%= render partial: 'likes/like', locals: {item: @item} %>
         </div>
 
-        <%= link_to "編集",edit_item_path(@item),class: 'btn btn-edit' %>
-        
-        <%= link_to "削除",item_path(@item),method: :delete, class: 'btn btn-delete' %><br>
+        <% if @user == current_user %>
+          <%= link_to "編集",edit_item_path(@item),class: 'btn btn-edit' %>
+          
+          <%= link_to "削除",item_path(@item),method: :delete, class: 'btn btn-delete' %><br>
+        <% end %>
 
         <%= link_to "戻る",user_path(@item.user_id), class: 'btn btn-back' %><br>
     </div>
