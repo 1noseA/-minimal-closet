@@ -6,7 +6,7 @@ ja:
     attributes:
       user:
         id: ID
-        name: 名前
+        name: ニックネーム
         email: Eメール
         password: パスワード
         profile_image: プロフィール画像

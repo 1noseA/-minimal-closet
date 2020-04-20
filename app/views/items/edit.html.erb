@@ -25,7 +25,7 @@
           <span>シーズン<%= season.collection_select :season_id, @seasons, :id, :name, selected: @item.season_id  %></span><br>
           <% end %>
 
-          <span>説明<%= f.text_area :text %></span><br>
+          <span>説明<%= f.text_area :text, placeholder: "ブランド、サイズ、購入年など" %></span><br>
           <%= f.submit "変更",class: 'btn-new-item'%>
         </div>
       </div>
