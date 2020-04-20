@@ -38,12 +38,9 @@ header,footer {
 
 header {
   .nav-item {
-    width: 160px;
-    height: 48px;
     color: #fff;
-    border:1px solid;
+    text-align: center;
     &:hover {
-      background: #777777;
       opacity: 0.8;
       }
   }
@@ -53,6 +50,10 @@ header {
   }
   i{
     color: #fff;
-    margin-right: 5px;
+    margin-right: 3px;
+  }
+  .logo {
+    font-size: 32px;
+    color: #fff;
   }
 }
