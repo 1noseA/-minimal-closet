@@ -20,7 +20,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @item = Item.find(params[:id])
   end
 
@@ -38,7 +37,7 @@ class ItemsController < ApplicationController
     @item.scene_id = params[:item][:scene][:scene_id]
     @item.season_id = params[:item][:season][:season_id]
     if @item.save
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user), notice: "保存しました"
     else
       @categories = Category.all
       @scenes = Scene.all
@@ -61,7 +60,7 @@ class ItemsController < ApplicationController
     @item.scene_id = params[:item][:scene][:scene_id]
     @item.season_id = params[:item][:season][:season_id]
     if @item.update(item_params)
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user), notice: "編集しました"
     else
       @categories = Category.all
       @scenes = Scene.all
@@ -73,7 +72,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    redirect_to user_path(current_user)
+    redirect_to user_path(current_user), notice: "削除しました"
   end
 
   private
@@ -82,8 +81,8 @@ class ItemsController < ApplicationController
   end
 
   def correct_user
-    user = User.find(params[:id])
-    if current_user != user
+    item = Item.find(params[:id])
+    if current_user != item.user
       redirect_to user_path(current_user)
     end
   end
