@@ -13,3 +13,9 @@ div.image {
   width: calc((100% - #{$m * ($n - 1) * 2 + $m * 2}) / #{$n});
   margin: $m;
 }
+
+.form{
+  width: 300px;
+  height: 370px;
+  border-radius: 3px;
+}
