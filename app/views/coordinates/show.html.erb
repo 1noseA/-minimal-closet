@@ -9,7 +9,7 @@
     
     <%#いいねボタン%>
       <p><div id="favorites_buttons_<%= @coordinate.id %>">
-          <%= render partial: 'favorites/favorite', locals: {coordinate: @coordinate} %>
+        <%= render partial: 'favorites/favorite', locals: {coordinate: @coordinate} %>
         </div></p>
 
       <% if @user == current_user %>
