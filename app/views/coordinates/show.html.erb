@@ -13,12 +13,12 @@
         </div>
 
       <% if @user == current_user %>
-        <%= link_to "編集",edit_user_coordinate_path(current_user,@coordinate),class: 'btn btn-edit' %>
+        <%= link_to "編集する",edit_user_coordinate_path(current_user,@coordinate),class: "btn btn-change" %>
           
-        <%= link_to "削除",user_coordinate_path(current_user,@coordinate),method: :delete, class: 'btn btn-delete' %><br>
+        <%= link_to "削除する",user_coordinate_path(current_user,@coordinate),method: :delete, class: "btn btn-delete" %><br>
       <% end %>
 
-      <%= link_to "戻る",user_coordinates_path(@user), class: 'btn btn-back' %><br>
+      <%= link_to "戻る",user_coordinates_path(@user), class: "btn btn-move" %><br>
     </div>
   </div>
 </div>

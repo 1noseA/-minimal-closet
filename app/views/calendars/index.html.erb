@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to "コーディネートを保存する", new_user_calendar_path(current_user) %>
+<%= link_to "コーディネートを保存する", new_user_calendar_path(current_user),class: "btn btn-add" %>
 
 <%= month_calendar events: @calendars do |date, calendars| %>
   <%= date.day %>

@@ -10,9 +10,9 @@
 
     <div class="col-md-10">
       <% if @user == current_user %>
-        <%= link_to "アイテムを追加",new_item_path %>
+        <%= link_to "アイテムを追加",new_item_path, class: "btn btn-add" %>
       <% end %>
-        <%= link_to "コーディネートを見る",user_coordinates_path(@user) %><br>
+        <%= link_to "コーディネートを見る",user_coordinates_path(@user), class: "btn btn-move" %><br>
 
       <%#アイテム一覧%>
       <% @items.each do |item| %>

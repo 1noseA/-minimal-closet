@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-4">
           <%= attachment_image_tag @calendar, :day_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400", id: "prev-img" %>
-          <label for="post_img" class= "btn btn-img">
+          <label for="post_img" class= "btn btn-change">
           <%= f.attachment_field :day_image, id: "post_img", class: "img_form" %>
           画像選択</label>
         </div>
@@ -15,7 +15,7 @@
 
           <%= f.text_field :text, placeholder: "「◯◯さんとランチに行った」など" %><br>
 
-          <%= f.submit "変更を更新する" %>
+          <%= f.submit "変更を更新する",class: "btn btn-change" %>
         </div>
       </div>
     <% end %>

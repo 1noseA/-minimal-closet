@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-4">
           <%= attachment_image_tag @item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400", id: "prev-img" %>
-          <label for="post_img" class= "btn btn-img">
+          <label for="post_img" class= "btn btn-change">
           <%= f.attachment_field :item_image, id: "post_img", class: "img_form" %>
           画像選択</label>
         </div>
@@ -26,7 +26,7 @@
           <% end %>
 
           <span>説明<%= f.text_area :text, placeholder: "ブランド、サイズ、購入年など" %></span><br>
-          <%= f.submit "変更",class: 'btn-new-item'%>
+          <%= f.submit "変更する",class: "btn btn-change" %>
         </div>
       </div>
     <% end %>   

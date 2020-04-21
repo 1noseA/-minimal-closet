@@ -8,10 +8,10 @@
 
     <div class="col-md-10">
       <% if @user == current_user %>
-        <%= link_to "コーディネートを追加",new_user_coordinate_path(current_user) %>
+        <%= link_to "コーディネートを追加",new_user_coordinate_path(current_user) , class: "btn btn-add"%>
       <% end %>
-        <%= link_to "アイテムを見る", user_path(@user) %><br>
-        
+        <%= link_to "アイテムを見る", user_path(@user), class: "btn btn-move" %><br>
+
       <%#コーディネート一覧%>
       <p>全<%= @coordinates.count %>件</p>
       <div class="coordinate">
