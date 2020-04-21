@@ -19,12 +19,12 @@
  @import 'font-awesome';
 
  //カラーの変数を定義
-$main-color: #555555;
-$btn-color: #00afcc;
+$base-color: #555555;
+$main-color: #00afcc;
 $danger-color: #ea5549;
 
 * {
-  color: $main-color;
+  color: $base-color;
   font-family: system-ui, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体";
 }
 
@@ -33,7 +33,7 @@ $danger-color: #ea5549;
 }
 
 header,footer {
-	background-color: $main-color;
+	background-color: $base-color;
 }
 
 header {
@@ -61,16 +61,16 @@ header {
 //ボタン
 .btn-add {
   border:1px solid;
-  color: $btn-color;
+  color: $main-color;
   &:hover {
-      background: $btn-color;
+      background: $main-color;
       opacity: 0.8;
       color: #fff;
   }
 }
 .btn-change {
   border:1px solid;
-  background: $btn-color;
+  background: $main-color;
   color: #fff;
   &:hover {
       opacity: 0.8;
@@ -88,10 +88,19 @@ header {
 }
 .btn-move {
   border:1px solid;
-  background: $main-color;
+  background: $base-color;
   color: #fff;
   &:hover {
       opacity: 0.8;
       color: #fff;
   }
+}
+.error-message{
+  color: $danger-color;
+}
+.notice{
+  color: $main-color;
+}
+.alert{
+  color: $danger-color;
 }
