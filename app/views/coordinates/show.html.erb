@@ -10,7 +10,7 @@
     <%#いいねボタン%>
       <p><div id="favorites_buttons_<%= @coordinate.id %>">
         <%= render partial: 'favorites/favorite', locals: {coordinate: @coordinate} %>
-        </div></p>
+        </div></p><br>
 
       <% if @user == current_user %>
         <p><%= link_to "編集する",edit_user_coordinate_path(current_user,@coordinate),class: "btn btn-change" %>
