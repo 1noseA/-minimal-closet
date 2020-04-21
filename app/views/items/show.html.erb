@@ -1,27 +1,29 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
+    <div class="offset-2 col-md-4">
       <%= attachment_image_tag @item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400" %>
     </div>
 
-    <div class="col-md-8">
-        <span>アイテム名<%= @item.name %></span><br>
-        <span>カテゴリー<%= @item.category.name %></span><br>
-        <span>シーン<%= @item.scene.name %></span><br>
-        <span>シーズン<%= @item.season.name %></span><br>
-        <span>説明<%= @item.text %></span><br>
+    <div class="col-md-6">
+        <p>アイテム名：<%= @item.name %></p>
+        <span>カテゴリー：<%= @item.category.name %></span><br>
+        <span>シーン：<%= @item.scene.name %></span><br>
+        <span>シーズン：<%= @item.season.name %></span><br>
+        <p></p>
+        <span>メモ<%= simple_format(@item.text) %></span>
+        
         <%#カウントボタン%>
-        <div id="likes_buttons_<%= @item.id %>">
+        <p><div id="likes_buttons_<%= @item.id %>">
           <%= render partial: 'likes/like', locals: {item: @item} %>
-        </div>
+        </div></p>
 
         <% if @item.user == current_user %>
-          <%= link_to "編集する",edit_item_path(@item),class: "btn btn-change" %>
+          <p><%= link_to "編集する",edit_item_path(@item),class: "btn btn-change" %>
           
-          <%= link_to "削除する",item_path(@item),method: :delete, class: "btn btn-delete" %><br>
+          <%= link_to "削除する",item_path(@item),method: :delete, class: "btn btn-delete" %></p>
         <% end %>
 
-        <%= link_to "戻る",user_path(@item.user_id), class: "btn btn-move" %><br>
+        <p><%= link_to "戻る",user_path(@item.user_id), class: "btn btn-move" %></p>
     </div>
   </div>
 </div>
