@@ -6,9 +6,9 @@
 
     <div class="col-md-6">
       <span>メモ<%= simple_format(@coordinate.text) %></span><br>
-
-      <%#いいねボタン%>
-        <p><div id="favorites_buttons_<%= @coordinate.id %>">
+    
+    <%#いいねボタン%>
+      <p><div id="favorites_buttons_<%= @coordinate.id %>">
           <%= render partial: 'favorites/favorite', locals: {coordinate: @coordinate} %>
         </div></p>
 
