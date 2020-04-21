@@ -1,24 +1,24 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
+    <div class="offset-2 col-md-4">
       <%= attachment_image_tag @coordinate, :image, format: 'jpeg', size: "300x400" %>
     </div>
 
-    <div class="col-md-8">
-      <p>説明<%= @coordinate.text %></p><br>
+    <div class="col-md-6">
+      <span>メモ<%= simple_format(@coordinate.text) %></span><br>
 
       <%#いいねボタン%>
-        <div id="favorites_buttons_<%= @coordinate.id %>">
+        <p><div id="favorites_buttons_<%= @coordinate.id %>">
           <%= render partial: 'favorites/favorite', locals: {coordinate: @coordinate} %>
-        </div>
+        </div></p>
 
       <% if @user == current_user %>
-        <%= link_to "編集する",edit_user_coordinate_path(current_user,@coordinate),class: "btn btn-change" %>
+        <p><%= link_to "編集する",edit_user_coordinate_path(current_user,@coordinate),class: "btn btn-change" %>
           
-        <%= link_to "削除する",user_coordinate_path(current_user,@coordinate),method: :delete, class: "btn btn-delete" %><br>
+        <%= link_to "削除する",user_coordinate_path(current_user,@coordinate),method: :delete, class: "btn btn-delete" %></p>
       <% end %>
 
-      <%= link_to "戻る",user_coordinates_path(@user), class: "btn btn-move" %><br>
+      <p><%= link_to "戻る",user_coordinates_path(@user), class: "btn btn-move" %></p>
     </div>
   </div>
 </div>
