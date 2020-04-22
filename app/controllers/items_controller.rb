@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
     @item.category_id = params[:item][:category][:category_id]
     @item.scene_id = params[:item][:scene][:scene_id]
     @item.season_id = params[:item][:season][:season_id]
-    if @item.save!
+    if @item.save
       redirect_to user_path(current_user), notice: "保存しました"
     else
       @categories = Category.all
@@ -59,7 +59,7 @@ class ItemsController < ApplicationController
     @item.category_id = params[:item][:category][:category_id]
     @item.scene_id = params[:item][:scene][:scene_id]
     @item.season_id = params[:item][:season][:season_id]
-    if @item.update!(item_params)
+    if @item.update(item_params)
       redirect_to user_path(current_user), notice: "編集しました"
     else
       @categories = Category.all

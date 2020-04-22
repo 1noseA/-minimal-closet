@@ -1,20 +1,24 @@
-<table class="table">
-  <tr><%= attachment_image_tag user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %></tr>
+<div class="container">
+  <div class="row">
+    <div class="bg-light p-2 w-100 rounded">
+    <h4><%= user.name %>の<br>クローゼット</h4>
+    <table class="table">
   <tr>
-    <td>ニックネーム</td>
-    <td><%= user.name %></td>
+    <td><%= attachment_image_tag user, :profile_image, format: 'jpeg', class: "profile_img", fallback: "no_image.jpg", size: "100x100" %></td>
   </tr>
   <tr>
-    <td>自己紹介</td>
-    <td><%= user.introduction %></td>
+    <td>ニックネーム：<br>
+    <%= user.name %></td>
   </tr>
   <tr>
-    <td>フォロー</td>
-    <td><%= link_to user.follower.count, user_follows_path(user) %></td>
+    <td>自己紹介：<br>
+    <%= user.introduction %></td>
   </tr>
   <tr>
-    <td>フォロワー</td>
-    <td><%= link_to user.followed.count, user_followers_path(user) %></td>
+    <td>フォロー　：<%= link_to user.follower.count, user_follows_path(user) %></td>
+  </tr>
+  <tr>
+    <td>フォロワー：<%= link_to user.followed.count, user_followers_path(user) %></td>
   </tr>
 </table>
 
@@ -30,3 +34,6 @@
 <% if user == current_user %>
   <%= link_to "編集する",edit_user_path(current_user), class: "btn btn-change" %>
 <% end %>
+</div>
+</div>
+</div>

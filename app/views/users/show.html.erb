@@ -1,12 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <h4><%= @user.name %>の<br>クローゼット</h4>
+    <div class="col-md-2">
       <%#プロフィール欄%>
       <%= render 'profile', user: @user %>
     </div>
 
-    <div class="col-md-9">
+    <div class="col-md-10 p-2 bg-light rounded">
       <% if @user == current_user %>
         <%= link_to "アイテムを追加",new_item_path, class: "btn btn-add" %>
       <% end %>
