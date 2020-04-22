@@ -13,3 +13,15 @@
 .profile_img{
   border-radius: 50%;
 }
+
+.user_item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+$n: 5; //1行当たりのカラム数
+$m: 1%; //カラム左右のマージン
+div.item_image {
+  width: calc((100% - #{$m * ($n - 1) * 2 + $m * 2}) / #{$n});
+  margin: $m;
+}

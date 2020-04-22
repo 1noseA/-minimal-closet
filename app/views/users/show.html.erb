@@ -1,11 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-3">
       <%#プロフィール欄%>
       <%= render 'profile', user: @user %>
     </div>
 
-    <div class="col-md-10 p-2 bg-light rounded">
+    <div class="col-md-9 p-2 bg-light rounded">
+      <h4><%= @user.name %>のアイテム</h4>
+      <p>全<%= @user.items.count %>アイテム</p>
+
       <% if @user == current_user %>
         <%= link_to "アイテムを追加",new_item_path, class: "btn btn-add" %>
       <% end %>
@@ -16,14 +19,18 @@
         <% @categories.each do |category| %>
           <% if category.id == item.category_id %> 
             <strong><%= category.name %></strong>
-            <span><%= category.items.where(user_id: @user.id).count %>アイテム</span><br>
+            <span>＜<%= category.items.where(user_id: @user.id).count %>アイテム＞</span>
+            <div class="user_item">
             <% category.items.where(user_id: @user.id).each do |item| %>
+            <div class="item_image">
               <%= link_to item_path(item) do %>
                 <%= attachment_image_tag item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "150x200" %>
               <% end %>
+            </div> 
             <% end %><br>
+          </div>
           <% end %>
-        <% end %>
+        <% end %> 
       <% end %>
     </div>
   </div>
