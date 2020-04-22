@@ -3,14 +3,14 @@
     <div class="offset-2 col-md-4">
       <h4>プロフィール編集</h4>
     </div>
-  </div>
+  </div> 
+  <%= render partial: 'items/error', locals: {image: @user} %>
+  <%= form_for(@user) do |f| %>
   <div class="row">
-    <div class="offset-2 col-md-4"> 
-      <%= render partial: 'items/error', locals: {image: @user} %>
-      <%= form_for(@user) do |f| %>
-        <p><%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "280x280", id: "prev-img" %></p>
-        <label for="post_img" class= "btn btn-change">
-        <%= f.attachment_field :profile_image, id: "post_img", class: "img_form" %>画像選択</label>
+    <div class="offset-2 col-md-4">
+      <p><%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "280x280", id: "prev-img" %></p>
+      <label for="post_img" class= "btn btn-change">
+      <%= f.attachment_field :profile_image, id: "post_img", class: "img_form" %>画像選択</label>
     </div>
 
     <div class="col-md-6">
@@ -19,8 +19,7 @@
       <span>自己紹介<p><%= f.text_area :introduction, class: "profile_form" %></span></p>
 
       <%= f.submit "更新する", class: "btn btn-change" %>
-
-      <% end %>
     </div>
   </div>
+  <% end %>
 </div>   
