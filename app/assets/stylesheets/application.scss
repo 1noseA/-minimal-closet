@@ -107,3 +107,25 @@ header {
 a {
   color: $main-color;
 }
+
+.pagination{
+  .page-item{
+    .page-link{
+      border-radius:10%;
+      color: $base-color;
+      margin:2px;
+      &:hover{
+      background: $main-color;
+      color: #fff;
+      }
+    }
+  }
+  .active{
+    .page-link{
+      background: $main-color;
+      border-color: $main-color;
+      border-radius:10%;
+      color: #fff;
+    }  
+  }
+}
