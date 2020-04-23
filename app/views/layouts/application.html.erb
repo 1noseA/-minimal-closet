@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MinimalCloset</title>
+    <title>minimal closet.</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="icon" href="/assets/favicon.ico">
   </head>
 
   <body>
     <header class="navbar navbar-expand-md mb-5">
       <ul class="navbar-nav my-2 px-2">
-        <%= link_to root_path,class: "text-decoration-none",id: "top_btn" do %>
-        <li>minimal closet.</li>
+        <%= link_to root_path,class: "text-decoration-none" do %>
+        <li class = "logo">minimal closet.</li>
         <% end %>
       </ul>
       <ul class="navbar-nav ml-auto my-3 mr-2">
         <% if user_signed_in? %>
-        <li class="nav-item p-2 mr-5 rounded"><%= link_to 'Myクローゼット',user_path(current_user), class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-5 rounded"><%= link_to 'コーディネート',user_coordinates_path(current_user), class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-5 rounded"><%= link_to 'カレンダー',user_calendars_path(current_user), class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-5 rounded"><%= link_to 'データ',items_path, class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-5 rounded"><%= link_to 'いろんなクローゼット',users_path, class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-5 rounded"><%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3"><i class="fas fa-user"></i><%= link_to "私のクローゼット",user_path(current_user), class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3"><i class="fas fa-tshirt"></i><%= link_to "コーディネート",user_coordinates_path(current_user), class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3"><i class="far fa-calendar-alt"></i><%= link_to "カレンダー",user_calendars_path(current_user), class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3"><i class="fas fa-signal"></i><%= link_to "データ",items_path, class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3"><i class="fas fa-users"></i><%= link_to "みんなのクローゼット",users_path, class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3"><i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: "text-decoration-none nav-text" %></li>
         <% else %>
-        <li class="nav-item p-2 mr-5 rounded"><%= link_to 'このサイトについて',about_path, class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-5 rounded"><%= link_to '新規会員登録',new_user_registration_path, class: "text-decoration-none nav-text" %></li>
-        <li class="nav-item p-2 mr-5 rounded"><%= link_to 'ログイン',new_user_session_path, class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3"><i class="far fa-hand-point-right"></i><%= link_to "はじめての人へ",about_path, class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3"><i class="fas fa-user-plus"></i><%= link_to "新規会員登録",new_user_registration_path, class: "text-decoration-none nav-text" %></li>
+        <li class="nav-item p-2 mr-3"><i class="fas fa-sign-in-alt"></i><%= link_to "ログイン",new_user_session_path, class: "text-decoration-none nav-text" %></li>
         <% end %>
       </ul>
     </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
     <footer class="p-5 mt-5"></footer>
   </body>

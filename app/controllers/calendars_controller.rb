@@ -19,7 +19,7 @@ class CalendarsController < ApplicationController
     @calendar = Calendar.new(calendar_params)
     @calendar.user_id = current_user.id
     if @calendar.save
-      redirect_to user_calendars_path(current_user)
+      redirect_to user_calendars_path(current_user), notice: "保存しました"
     else
       @user = current_user
       render :new
@@ -29,7 +29,7 @@ class CalendarsController < ApplicationController
   def destroy
     @calendar = Calendar.find(params[:id])
     @calendar.destroy
-    redirect_to user_calendars_path(current_user), notice:"削除しました"
+    redirect_to user_calendars_path(current_user), notice: "削除しました"
   end
 
   def edit

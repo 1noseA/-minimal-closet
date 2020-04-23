@@ -21,7 +21,7 @@ class CoordinatesController < ApplicationController
     @coordinate = Coordinate.new(coordinate_params)
     @coordinate.user_id = current_user.id
     if @coordinate.save
-      redirect_to user_coordinates_path(current_user)
+      redirect_to user_coordinates_path(current_user), notice: "保存しました"
     else
       @user = User.find(params[:user_id])
       render :new
@@ -37,7 +37,7 @@ class CoordinatesController < ApplicationController
     @coordinate = Coordinate.find(params[:id])
     @coordinate.user_id = current_user.id
     if @coordinate.update(coordinate_params)
-      redirect_to user_coordinates_path(current_user)
+      redirect_to user_coordinates_path(current_user), notice: "編集しました"
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class CoordinatesController < ApplicationController
   def destroy
     @coordinate = Coordinate.find(params[:id])
     @coordinate.destroy
-    redirect_to user_coordinates_path(current_user)
+    redirect_to user_coordinates_path(current_user), notice: "削除しました"
   end
 
   private

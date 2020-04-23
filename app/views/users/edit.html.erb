@@ -1,19 +1,25 @@
 <div class="container">
-  <h2>プロフィール編集</h2>
-    <%= form_for(@user) do |f| %>
-      <div class="row">
-        <div class="col-md-4">
-          <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100", id: "prev-img" %>
-          <label for="post_img" class= "btn btn-img">
-          <%= f.attachment_field :profile_image, id: "post_img", class: "img_form" %>
-          画像選択</label>
-        </div>
+  <div class="row">
+    <div class="offset-2 col-md-4">
+      <h4>プロフィール編集</h4>
+    </div>
+  </div> 
+  <%= render partial: 'items/error', locals: {image: @user} %>
+  <%= form_for(@user) do |f| %>
+  <div class="row">
+    <div class="offset-2 col-md-4">
+      <p><%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "280x280", id: "prev-img" %></p>
+      <label for="post_img" class= "btn btn-change">
+      <%= f.attachment_field :profile_image, id: "post_img", class: "img_form" %>画像選択</label>
+    </div>
 
-        <div class="col-md-8">
-          <span>ニックネーム<%= f.text_field :name %></span><br>
-          <span>自己紹介<%= f.text_field :introduction %></span><br>
-          <%= f.submit "更新" %>
-        </div>
-      </div>
-    <% end %>
-</div>
+    <div class="col-md-6">
+      <span>ニックネーム<p><%= f.text_field :name, class: "profile_name" %></span></p>
+      
+      <span>自己紹介<p><%= f.text_area :introduction, class: "profile_form" %></span></p>
+
+      <%= f.submit "更新する", class: "btn btn-change" %>
+    </div>
+  </div>
+  <% end %>
+</div>   

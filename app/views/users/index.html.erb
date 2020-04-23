@@ -1,22 +1,16 @@
 <div class="container"> 
   <div class="row">
-    <div class="col-md-2">
-      <h4><%= @user.name %>の<br>クローゼット</h4>
-      <%#プロフィール欄%>
-      <%= render 'profile', user: @user %>
-    </div>
-
-    <div class="col-md-10">
-    <h2>いろいろなクローゼットを見る</h2>
-    <span>全<%= @count.count %>件</span>
+    <div class="col-md-10 mx-auto mb-5">
+    <h2>みんなのクローゼットを見る</h2>
+    <p>全<%= @count.count %>件</p>
       <table class="table">
         <% @users.each do |user| %>
           <tr>
             <td>
               <%= link_to user_path(user) do %>
-                <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+                <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "profile_img", fallback: "no_image.jpg" %>
               <% end %><br>
-              <%= user.name %>
+              <p><%= user.name %></p>
               </td>
               <td>
               <% user.items.first(5).each do |item| %>

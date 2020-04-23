@@ -1,5 +1,7 @@
-<% if image.errors.any? %>
-  <% image.errors.full_messages.each do |message| %>
-    <%= message %>
+<div class="error-message">
+  <% if image.errors.any? %>
+    <% image.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
   <% end %>
-<% end %>
+</div>

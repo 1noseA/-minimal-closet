@@ -1,33 +1,39 @@
 <div class="container">
-  <h2>アイテム登録</h2>
+  <div class="row">
+    <div class="offset-2 col-md-4">
+      <h4>アイテム登録</h4>
+    </div>
+  </div> 
   <%= render partial: 'items/error', locals: {image: @item} %>
-    <%= form_for (@item) do |f| %>
-      <div class="row">
-        <div class="col-md-4">
-          <%= attachment_image_tag @item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400", id: "prev-img" %>
-          <label for="post_img" class= "btn btn-img">
-          <%= f.attachment_field :item_image, id: "post_img", class: "img_form" %>
-          画像選択</label>
-        </div>
+  <%= form_for (@item) do |f| %>
+  <div class="row">
+    <div class="offset-2 col-md-4">
+      <%= attachment_image_tag @item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400", id: "prev-img" %>
+      <label for="post_img" class= "btn btn-add">
+      <%= f.attachment_field :item_image, id: "post_img", class: "img_form" %>画像選択</label>
+    </div>
 
-        <div class="col-md-8">
-          <span>アイテム名<%= f.text_field :name %></span><br>
+    <div class="col-md-6">
+      <p>アイテム名<br><%= f.text_field :name, class: "item_name" %></p>
 
-          <%= f.fields_for :category do |c| %>
-          <span>カテゴリー<%= c.collection_select :category_id, @categories, :id, :name, {include_blank: '--選択してください--'}  %></span><br>
-          <% end %>
+      <%= f.fields_for :category do |c| %>
+        <span>カテゴリー　<%= c.collection_select :category_id, @categories, :id, :name, {include_blank: "--選択してください--"} %></span><br>
+      <% end %>
 
-          <%= f.fields_for :scene do |s| %>
-          <span>シーン<%= s.collection_select :scene_id, @scenes, :id, :name, {include_blank: '--選択してください--'}  %></span><br>
-          <% end %>
+      <%= f.fields_for :scene do |s| %>
+        <span>シーン　　　<%= s.collection_select :scene_id, @scenes, :id, :name, {include_blank: "--選択してください--"} %></span><br>
+      <% end %>
 
-          <%= f.fields_for :season do |season| %>
-          <span>シーズン<%= season.collection_select :season_id, @seasons, :id, :name, {include_blank: '--選択してください--'}  %></span><br>
-          <% end %>
+      <%= f.fields_for :season do |season| %>
+        <span>シーズン　　<%= season.collection_select :season_id, @seasons, :id, :name, {include_blank: "--選択してください--"} %></span><br>
+      <% end %>
+        
+      <p></p>
+      <p>メモ<br><%= f.text_area :text, class: "item_form", placeholder: "ブランド、サイズ、購入年など" %></p>
 
-          <span>説明<%= f.text_area :text, placeholder: "ブランド、サイズ、購入年など" %></span><br>
-          <%= f.submit "保存",class: 'btn-new-item'%>
-        </div>
-      </div>
-    <% end %>     
-</div>
+      <%= f.submit "保存する",class: "btn btn-add" %>
+
+    </div>
+  </div>
+  <% end %>
+</div>  
