@@ -11,12 +11,13 @@
         <span>シーズン　：<%= @item.season.name %></span><br>
         <p></p>
         <span>メモ<%= simple_format(@item.text) %></span><br>
-        <%#カウントボタン%>
-        <p><div id="likes_buttons_<%= @item.id %>">
-          <%= render partial: 'likes/like', locals: {item: @item} %>
-        </div></p><br>
 
         <% if @item.user == current_user %>
+          <%#カウントボタン%>
+          <p><div id="likes_buttons_<%= @item.id %>">
+          <%= render partial: 'likes/like', locals: {item: @item} %>
+          </div></p><br>
+
           <p><%= link_to "編集する",edit_item_path(@item),class: "btn btn-change" %>
           
           <%= link_to "削除する",item_path(@item),method: :delete, class: "btn btn-delete" %></p>
