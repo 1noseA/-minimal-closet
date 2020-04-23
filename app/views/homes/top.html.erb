@@ -1,10 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-10 mx-auto mb-5">
+    <div class="mx-auto px-3 py-5 mb-5 bg-light rounded">
       <h1>ミニマリストになりたい人</h1>
       <h1>ミニマリストのための</h1>
-      <h1 class="mb-3">クローゼット管理アプリケーション</h1>
+      <h1>クローゼット管理アプリケーション</h1>
       <h1 class="mb-5">ｍｉｎｉｍａｌ　ｃｌｏｓｅｔ．</h1>
+
+      <%#詳しく見るボタン（ABOUTページへ）%>
+      <%= link_to "使い方を見る",about_path, class: "btn btn-move p-3 mr-3"%>
+      <%= link_to "さっそく使ってみる（会員登録）",new_user_registration_path, class: "btn btn-add p-3"%>
+    </div>
+
+    <div class="mx-auto mb-5">
       <p>ミニマリストになりたくて、</p>
       <p>まずは服を減すことから始める人は多いと思います。</p>
       <p>しかし、、、</p>
@@ -15,12 +22,10 @@
           <li>朝の服選びがめんどくさい</li>
           <li>服はたくさんあるのにシーンに合ったものがない</li>
         </ul>
-      <p class="mb-5">このように悩んだ経験はあるのではないでしょうか？</p>
+      <p class="mb-5">このように悩んだ経験、あるのではないでしょうか？</p>
       <p>このアプリケーションで楽しく、</p>
       <p class="mb-5">クローゼットの中身を適正量にしていきましょう！</p>
-      <%#詳しく見るボタン（ABOUTページへ）%>
-      <%= link_to "使い方を見る",about_path, class: "btn btn-move"%>
-      <%= link_to "さっそく使ってみる（会員登録）",new_user_registration_path, class: "btn btn-add"%>
+      
     </div>
   </div>
 </div>
