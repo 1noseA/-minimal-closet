@@ -1,11 +1,12 @@
 require 'rails_helper'
 
-describe 'アイテム登録', type: :system do
+describe 'アイテム管理機能', type: :system do
   describe '一覧表示' do
     before do
       user_a = FactoryBot.create(:user, name: 'ユーザーA', email: 'a@example.com')
       FactoryBot.create(:item, name: 'aaa', user: user_a)
     end
+
     context 'ユーザーAがログインしているとき' do
       before do
         visit new_user_session_path
