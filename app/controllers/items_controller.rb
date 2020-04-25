@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
     
     #ワースト３
     #着用回数０のアイテムを左外部結合で抽出
-    @unlikes = Item.left_joins(:likes).where(likes:{id: nil}).limit(3)
+    @unlikes = Item.left_joins(:likes).where(likes:{id: nil}, user_id: current_user.id).limit(3)
     #@worst_ranksは着用回数１以上のアイテムを順位付け
     #着用回数０が３以上の場合とそれ以外で分ける
     #@unlikesと@worst_ranks合わせて３アイテム表示になるように
