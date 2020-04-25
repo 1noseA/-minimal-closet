@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 2020_04_19_061815) do
     t.string "item_image_id"
     t.string "name"
     t.text "text"
-    t.integer "count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
