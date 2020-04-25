@@ -8,7 +8,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :item_image_id
       t.string :name
       t.text :text
-      t.integer :count
       t.timestamps
     end
   end

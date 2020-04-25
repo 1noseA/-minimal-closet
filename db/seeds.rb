@@ -10,6 +10,12 @@ Category.create!(
   name: "トップス"
 )
 Category.create!(
+  name: "ワンピース"
+)
+Category.create!(
+  name: "セットアップ"
+)
+Category.create!(
   name: "ボトムス"
 )
 Category.create!(
@@ -64,57 +70,17 @@ Season.create!(
 )
 
 User.create!(
-  name: "aaa",
-  email: "aa@aa",
-  password: "aaaaaa"
+  name: "のせっち",
+  email: "n@test.com",
+  password: "nnnnnn"
 )
 User.create!(
-  name: "bbb",
-  email: "bb@bb",
-  password: "bbbbbb"
+  name: "モモコ",
+  email: "m@test.com",
+  password: "mmmmmm"
 )
 User.create!(
-  name: "ccc",
-  email: "cc@cc",
-  password: "cccccc"
-)
-User.create!(
-  name: "ddd",
-  email: "dd@dd",
-  password: "dddddd"
-)
-User.create!(
-  name: "eee",
-  email: "ee@ee",
-  password: "eeeeee"
-)
-User.create!(
-  name: "fff",
-  email: "ff@ff",
-  password: "ffffff"
-)
-User.create!(
-  name: "ggg",
-  email: "gg@gg",
-  password: "gggggg"
-)
-User.create!(
-  name: "hhh",
-  email: "hh@hh",
-  password: "hhhhhh"
-)
-User.create!(
-  name: "iii",
-  email: "ii@ii",
-  password: "iiiiii"
-)
-User.create!(
-  name: "jjj",
-  email: "jj@jj",
-  password: "jjjjjj"
-)
-User.create!(
-  name: "kkk",
-  email: "kk@kk",
-  password: "kkkkkk"
+  name: "菫",
+  email: "s@test.com",
+  password: "ssssss"
 )
