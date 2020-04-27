@@ -19,3 +19,6 @@ ja:
         image: コーディネート画像
       item:
         item_image: アイテム画像
+        category_id: カテゴリー
+        scene_id: シーン
+        season_id: シーズン

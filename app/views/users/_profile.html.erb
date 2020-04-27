@@ -11,7 +11,7 @@
   </tr>
   <tr>
     <td>自己紹介：<br>
-    <%= user.introduction %></td>
+    <%= simple_format(user.introduction) %></td>
   </tr>
   <tr>
     <td>フォロー　：　<%= link_to user.follower.count, user_follows_path(user) %></td>
