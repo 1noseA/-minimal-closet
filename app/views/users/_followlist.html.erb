@@ -10,7 +10,7 @@
             <% end %>
           </td>
           <td><%= user.name %></td>
-          <td><%= user.introduction %>
+          <td><%= simple_format(user.introduction) %>
           <td>フォロー数：<%= user.follower.count %></td>
           <td>フォロワー数：<%= user.followed.count %></td>
           <td>
