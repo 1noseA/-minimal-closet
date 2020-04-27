@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
   before_action :correct_user, only: [:edit,:update]
 
   def index
+    @constant = Constant.new
+    @categories = Category.all
     #ベスト３
     @best_ranks = Item.find(current_user.likes.group(:item_id).order('count(item_id) desc').limit(3).pluck(:item_id))
     

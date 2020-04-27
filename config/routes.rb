@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :calendars
 
+  resources :constant
   resources :categories
   resources :scenes
   resources :seasons

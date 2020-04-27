@@ -6,6 +6,21 @@
     </div>
 
     <div class="col-md-9">
+      <% @categories.each do |category| %>
+        <%= category.name %>
+        <%= form_with url: new_constant_path do |f| %>
+          <%= f.number_field :constant %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.submit "保存する",class: "btn btn-add" %>
+        <% end %>
+        <% if category.constants != 0%>
+          <span>目標値<%= category.constants %></span>
+        <% else %>
+          <span>目標値0</span>
+        <% end %>
+      <span>実際値<%= category.items.where(user_id: current_user.id).count %></span><br>
+    <% end %>
+
     <div class="p-3 mb-5 bg-light rounded">
     <h4><i class="fas fa-crown"></i> 着用回数ベスト３ <i class="fas fa-crown"></i></h4>
       <div class="item_index p-3 bg-light rounded">
