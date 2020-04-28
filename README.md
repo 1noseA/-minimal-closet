@@ -41,7 +41,7 @@
 ## 使用技術
 ### フロントエンド
 - HTML&CSS
-- JavaScript（jQuery）
+- jQuery
 ### バックエンド
 - Ruby2.5.7
 - Ruby on Rails5.2.4.2
@@ -55,14 +55,14 @@
 ## URL
 http://18.178.164.47/
 - テストユーザー
-  - ニックネーム：のせっち、password：nnnnnn
-  - ニックネーム：モモコ、password：mmmmmm
-  - ニックネーム：菫、password：ssssss
+  - ニックネーム：のせっち、パスワード：nnnnnn
+  - ニックネーム：モモコ、パスワード：mmmmmm
+  - ニックネーム：菫、パスワード：ssssss
 
 
 ## 設計書
 ### 機能一覧
-https://docs.google.com/spreadsheets/d/1A9BcG6NJbHddkaWGqMHFYq5xGgQDkPhR992HZPUC7f8/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1A9BcG6NJbHddkaWGqMHFYq5xGgQDkPhR992HZPUC7f8/edit#gid=0
 
 ### ER図
 https://app.diagrams.net/#G1fRviMhhhChFRmU9iRodaax_GNZHQvItQ
