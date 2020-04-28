@@ -23,30 +23,30 @@
 20~30代の服を減らしたいと思っている女性。
 
 ### 主な利用シーン
--買い物をするとき
--コーディネートを考えるとき
--服を減らしたいと思っているとき
+- 買い物をするとき
+- コーディネートを考えるとき
+- 服を減らしたいと思っているとき
 
 ## 使用技術
 ### フロントエンド
--HTML&CSS
--JavaScript（jQuery）
+- HTML&CSS
+- JavaScript（jQuery）
 ### バックエンド
--Ruby2.5.7
--Ruby on Rails5.2.4.2
+- Ruby2.5.7
+- Ruby on Rails5.2.4.2
 ### 開発環境
--Vagrant
+- Vagrant
 ### インフラ
--AWS(EC2,RDS)
--Nginx
--Puma
+- AWS(EC2,RDS)
+- Nginx
+- Puma
 
 ## URL
 http://18.178.164.47/
 ### テストユーザー
--ニックネーム：のせっち、password：nnnnnn
--ニックネーム：モモコ、password：mmmmmm
--ニックネーム：菫、password：ssssss
+- ニックネーム：のせっち、password：nnnnnn
+- ニックネーム：モモコ、password：mmmmmm
+- ニックネーム：菫、password：ssssss
 
 
 ## 設計書
