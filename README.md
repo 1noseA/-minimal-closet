@@ -1,4 +1,5 @@
 # minimal closet
+<img width="1436" alt="スクリーンショット 2020-04-28 15 57 31" src="https://user-images.githubusercontent.com/59720615/80457843-e9300b00-896a-11ea-942d-d2f0eda995c0.png">
 
 ## サイト概要
 ミニマリストになりたい人、ミニマリストのためのクローゼット管理アプリケーション。
@@ -22,25 +23,47 @@
 20~30代の服を減らしたいと思っている女性。
 
 ### 主な利用シーン
-買い物をするとき
-コーディネートを考えるとき
-服を減らしたいと思っているとき
+-買い物をするとき
+-コーディネートを考えるとき
+-服を減らしたいと思っているとき
+
+## 使用技術
+### フロントエンド
+-HTML&CSS
+-JavaScript（jQuery）
+### バックエンド
+-Ruby2.5.7
+-Ruby on Rails5.2.4.2
+### 開発環境
+-Vagrant
+### インフラ
+-AWS(EC2,RDS)
+-Nginx
+-Puma
+
+## URL
+http://18.178.164.47/
+### テストユーザー
+-ニックネーム：のせっち、password：nnnnnn
+-ニックネーム：モモコ、password：mmmmmm
+-ニックネーム：菫、password：ssssss
+
 
 ## 設計書
-ER図
-https://app.diagrams.net/#G1fRviMhhhChFRmU9iRodaax_GNZHQvItQ
-
-テーブル定義書
-https://docs.google.com/spreadsheets/d/13iQRe0q3L4oSksETKsHX0SSRvbp0cHiT/edit#gid=397272164
-
-UI Flows
-https://www.draw.io/#G1Kd7LGtj608lye4Oci3xfuRkcgEuAend6
-
-ワイヤーフレーム
-https://app.diagrams.net/#G1VxPAY0wqWeVh8q6bG2C5srY1JknapgAd
-
-アプリケーション詳細設計
-https://docs.google.com/spreadsheets/d/1LVmn4lmotH9WzyePGldbP1MD-38VipvoPy5411ssaEY/edit#gid=1149508897
-
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1A9BcG6NJbHddkaWGqMHFYq5xGgQDkPhR992HZPUC7f8/edit?usp=sharing
+
+### ER図
+https://app.diagrams.net/#G1fRviMhhhChFRmU9iRodaax_GNZHQvItQ
+
+### テーブル定義書
+https://docs.google.com/spreadsheets/d/13iQRe0q3L4oSksETKsHX0SSRvbp0cHiT/edit#gid=397272164
+
+### UI Flows
+https://www.draw.io/#G1Kd7LGtj608lye4Oci3xfuRkcgEuAend6
+
+### ワイヤーフレーム
+https://app.diagrams.net/#G1VxPAY0wqWeVh8q6bG2C5srY1JknapgAd
+
+### アプリケーション詳細設計
+https://docs.google.com/spreadsheets/d/1LVmn4lmotH9WzyePGldbP1MD-38VipvoPy5411ssaEY/edit#gid=1149508897
