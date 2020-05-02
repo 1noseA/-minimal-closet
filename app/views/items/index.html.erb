@@ -18,7 +18,7 @@
               <% count=item.likes.count %>
             <% end %>
             <p>第<%= i %>位</p>
-            <%= attachment_image_tag item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "150x200" %>
+            <%= attachment_image_tag item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "150x200",class: "img-fluid" %>
             <p>着用回数：<%= item.likes.count %>回</p>
           </div>
         <% end %>
@@ -37,7 +37,7 @@
               <% count=item.likes.count %>
             <% end %>
             <p>第<%= i %>位</p>
-            <%= attachment_image_tag item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "150x200" %>
+            <%= attachment_image_tag item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "150x200",class: "img-fluid" %>
             <p>着用回数：<%= item.likes.count %>回</p>
           </div>
         <% end %>
