@@ -19,6 +19,7 @@
       <span>自己紹介<p><%= f.text_area :introduction, class: "profile_form" %></span></p>
 
       <%= f.submit "更新する", class: "btn btn-change" %>
+      <%= link_to "戻る",user_path(current_user), class: "btn btn-move" %>
     </div>
   </div>
   <% end %>
