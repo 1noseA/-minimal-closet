@@ -15,7 +15,8 @@
 
     <div class="col-md-6 text-box">
       <p>メモ<br><%= f.text_area :text,  class: "form", placeholder: "「お出かけコーデ」など" %></p>
-      <p><%= f.submit "更新する",class: "btn btn-change" %></p>
+      <p><%= f.submit "更新する",class: "btn btn-change" %>
+      <%= link_to "戻る",user_coordinate_path(current_user,@coordinate), class: "btn btn-move" %></p>
       </div>
   </div>
   <% end %>
