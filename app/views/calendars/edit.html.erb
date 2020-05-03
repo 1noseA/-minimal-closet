@@ -19,6 +19,7 @@
       <p><%= f.text_area :text, class: "day_form", placeholder: "「◯◯さんとランチに行った」など" %></p>
 
       <%= f.submit "変更を更新する",class: "btn btn-change" %>
+      <%= link_to "戻る",user_calendar_path(current_user,@calendar), class: "btn btn-move" %>
     </div>
   </div>
   <% end %>

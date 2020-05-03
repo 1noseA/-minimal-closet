@@ -18,7 +18,8 @@
 
       <p><%= f.text_area :text, class: "day_form", placeholder: "「◯◯さんとランチに行った」など" %></p>
 
-      <p><%= f.submit "保存する",class: "btn btn-add" %></p>
+      <p><%= f.submit "保存する",class: "btn btn-add" %>
+      <%= link_to "戻る",user_calendars_path(current_user), class: "btn btn-move" %></p>
     </div>
   </div>
   <% end %>    
