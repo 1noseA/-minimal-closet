@@ -5,11 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <%= favicon_link_tag('favicon.ico') %>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    
   </head>
 
   <body>
@@ -19,6 +21,12 @@
         <li class = "logo">minimal closet.</li>
         <% end %>
       </ul>
+
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="Navber">
       <ul class="navbar-nav ml-auto my-3 mr-2">
         <% if user_signed_in? %>
         <li class="nav-item p-2 mr-3"><i class="fas fa-user"></i><%= link_to "私のクローゼット",user_path(current_user), class: "text-decoration-none nav-text" %></li>
@@ -33,9 +41,15 @@
         <li class="nav-item p-2 mr-3"><i class="fas fa-sign-in-alt"></i><%= link_to "ログイン",new_user_session_path, class: "text-decoration-none nav-text" %></li>
         <% end %>
       </ul>
+    </div>
     </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <div id="page-top" >
+      <a href="#">
+        <i class="fas fa-chevron-up pageTop-chevron"></i>
+      </a>
+    </div>
     <%= yield %>
     <footer class="p-5 mt-5"></footer>
   </body>

@@ -1,19 +1,19 @@
-<div class="container">
+<div class="container item-page">
   <div class="row">
-    <div class="offset-2 col-md-4">
+    <div class="offset-2 col-md-4 item-box">
       <h4>アイテム編集</h4>
     </div>
   </div>
   <%= render partial: 'items/error', locals: {image: @item} %>
   <%= form_for (@item) do |f| %>
   <div class="row">
-    <div class="offset-2 col-md-4"> 
-      <%= attachment_image_tag @item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400", id: "prev-img" %>
+    <div class="offset-2 col-md-4 item-box"> 
+      <%= attachment_image_tag @item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400", id: "prev-img",class: "img-fluid" %>
       <label for="post_img" class= "btn btn-change">
       <%= f.attachment_field :item_image, id: "post_img", class: "img_form" %>画像選択</label>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 text-box">
       <%= f.label :name,"アイテム名"%><br>
       <%= f.text_field :name, class: "item_name" %><br>
       <p></p>
@@ -35,6 +35,7 @@
       <%= f.text_area :text, class: "item_form", placeholder: "ブランド、サイズ、購入年など" %><br>
 
       <%= f.submit "変更する",class: "btn btn-change" %>
+      <%= link_to "戻る",item_path(@item), class: "btn btn-move" %>
     </div>
   </div>
   <% end %>

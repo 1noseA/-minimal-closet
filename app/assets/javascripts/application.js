@@ -19,7 +19,8 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$( document ).on('turbolinks:load', function() {
+//画像プレビュー
+$(document).on('turbolinks:load', function() {
   function readURL(input) {
       if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -32,4 +33,26 @@ $( document ).on('turbolinks:load', function() {
   $("#post_img").change(function(){
       readURL(this);
   });
+});
+
+//ページTOPに戻るボタン
+$(function(){
+    var pagetop=$('#page-top');
+    pagetop.hide();
+    
+    $(window).scroll(function(){
+      if($(this).scrollTop()>300){
+        //---- 画面を300pxスクロールしたらボタンを表示
+        pagetop.fadeIn();
+      }else{
+        //---- 画面が300pxより上ならボタンを表示しない
+        pagetop.fadeOut();
+      }
+    });
+    // ボタンをクリックしたら、スクロールして上に戻る
+    pagetop.click(function(){
+      $('body,html').animate({
+      scrollTop: 0},1000);
+      return false;
+    });
 });

@@ -1,21 +1,22 @@
-<div class="container">
+<div class="container coordinate-page">
   <div class="row">
-    <div class="offset-2 col-md-4">
+    <div class="offset-2 col-md-4 coordinate-box">
       <h4>コーディネート編集</h4>
     </div>
   </div>
   <%= render partial: 'items/error', locals: {image: @coordinate} %>
   <%= form_for [@user,@coordinate] do |f| %>
   <div class="row">
-    <div class="offset-2 col-md-4"> 
-      <p><%= attachment_image_tag @coordinate, :image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400", id: "prev-img" %></p>
+    <div class="offset-2 col-md-4 coordinate-box"> 
+      <p><%= attachment_image_tag @coordinate, :image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400", id: "prev-img",class: "img-fluid" %></p>
       <label for="post_img" class= "btn btn-change">
       <%= f.attachment_field :image, id: "post_img", class: "img_form" %>画像選択</label>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 text-box">
       <p>メモ<br><%= f.text_area :text,  class: "form", placeholder: "「お出かけコーデ」など" %></p>
-      <p><%= f.submit "更新する",class: "btn btn-change" %></p>
+      <p><%= f.submit "更新する",class: "btn btn-change" %>
+      <%= link_to "戻る",user_coordinate_path(current_user,@coordinate), class: "btn btn-move" %></p>
       </div>
   </div>
   <% end %>

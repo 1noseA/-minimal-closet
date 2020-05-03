@@ -7,7 +7,7 @@
 }
 .profile_form{
   width: 300px;
-  height: 180px;
+  height: 208px;
   border-radius: 3px;
 }
 .profile_img{
@@ -24,4 +24,15 @@ $m: 1%; //カラム左右のマージン
 div.item_image {
   width: calc((100% - #{$m * ($n - 1) * 2 + $m * 2}) / #{$n});
   margin: $m;
+}
+
+@media screen and (max-width:425px){
+  .profile-page{
+    .profile-box{
+      margin-left: 24px !important;
+    }
+    .text-box{
+      margin-left: 24px;
+    }
+  }
 }

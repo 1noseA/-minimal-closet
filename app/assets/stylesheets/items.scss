@@ -28,3 +28,14 @@ div.item_rank {
   width: 300px;
   border-radius: 3px;
 }
+
+@media screen and (max-width:425px){
+  .item-page{
+    .item-box{
+      margin-left: 24px !important;
+    }
+    .text-box{
+      margin-left: 24px;
+    }
+  }
+}
