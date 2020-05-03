@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container item-page">
   <div class="row">
-    <div class="offset-2 col-md-4">
-      <%= attachment_image_tag @item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400" %>
+    <div class="offset-2 col-md-4 item-box">
+      <%= attachment_image_tag @item, :item_image, format: 'jpeg', fallback: "item_no_image.jpg", size: "300x400",class: "img-fluid" %>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 text-box">
         <p>アイテム名：<%= @item.name %></p>
         <span>カテゴリー：<%= @item.category.name %></span><br>
         <span>シーン　　：<%= @item.scene.name %></span><br>
