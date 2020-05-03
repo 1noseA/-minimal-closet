@@ -35,17 +35,17 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
-//page topボタン
+//ページTOPに戻るボタン
 $(function(){
     var pagetop=$('#page-top');
     pagetop.hide();
     
     $(window).scroll(function(){
-      if($(this).scrollTop()>100){
-        //---- 画面を100pxスクロールしたらボタンを表示
+      if($(this).scrollTop()>300){
+        //---- 画面を300pxスクロールしたらボタンを表示
         pagetop.fadeIn();
       }else{
-        //---- 画面が100pxより上ならボタンを表示しない
+        //---- 画面が300pxより上ならボタンを表示しない
         pagetop.fadeOut();
       }
     });
