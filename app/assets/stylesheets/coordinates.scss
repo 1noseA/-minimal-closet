@@ -19,3 +19,14 @@ div.image {
   height: 370px;
   border-radius: 3px;
 }
+
+@media screen and (max-width:425px){
+  .coordinate-page{
+    .coordinate-box{
+      margin-left: 24px !important;
+    }
+    .text-box{
+      margin-left: 24px;
+    }
+  }
+}
