@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user, only: [:edit,:update]
+  before_action :correct_user, only: [:edit,:update,:destroy]
 
   def index
     #ベスト３

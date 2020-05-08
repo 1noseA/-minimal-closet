@@ -1,6 +1,6 @@
 class CoordinatesController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user, only: [:new, :create, :edit,:update]
+  before_action :correct_user, only: [:new, :create, :edit,:update,:destroy]
 
   def index
     @user = User.find(params[:user_id])
