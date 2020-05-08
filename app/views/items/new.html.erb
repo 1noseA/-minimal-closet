@@ -18,15 +18,18 @@
       <p>アイテム名<br><%= f.text_field :name, class: "item_name" %></p>
 
       <%= f.fields_for :category do |c| %>
-        <span>カテゴリー　<%= c.collection_select :category_id, @categories, :id, :name, {include_blank: "--選択してください--"} %></span><br>
+        <span class="label rounded">必須</span>
+        <span>カテゴリー<%= c.collection_select :category_id, @categories, :id, :name, {include_blank: "--選択してください--"} %></span><br>
       <% end %>
 
       <%= f.fields_for :scene do |s| %>
-        <span>シーン　　　<%= s.collection_select :scene_id, @scenes, :id, :name, {include_blank: "--選択してください--"} %></span><br>
+        <span class="label rounded">必須</span>
+        <span>シーン　　<%= s.collection_select :scene_id, @scenes, :id, :name, {include_blank: "--選択してください--"} %></span><br>
       <% end %>
 
       <%= f.fields_for :season do |season| %>
-        <span>シーズン　　<%= season.collection_select :season_id, @seasons, :id, :name, {include_blank: "--選択してください--"} %></span><br>
+        <span class="label rounded">必須</span>
+        <span>シーズン　<%= season.collection_select :season_id, @seasons, :id, :name, {include_blank: "--選択してください--"} %></span><br>
       <% end %>
         
       <p></p>
