@@ -2,9 +2,10 @@
   <div class="row">
     <div class="offset-2 col-md-4 coordinate-box">
       <h4>コーディネート登録</h4>
+      <%= render partial: 'layouts/error', locals: {image: @coordinate} %>
     </div>
   </div>
-  <%= render partial: 'items/error', locals: {image: @coordinate} %>
+  
   <%= form_for [@user, @coordinate] do |f| %>
   <div class="row">
     <div class="offset-2 col-md-4 coordinate-box"> 

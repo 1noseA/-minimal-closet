@@ -2,9 +2,10 @@
   <div class="row">
     <div class="offset-2 col-md-4 item-box">
       <h4>アイテム登録</h4>
+      <%= render partial: 'layouts/error', locals: {image: @item} %>
     </div>
   </div> 
-  <%= render partial: 'items/error', locals: {image: @item} %>
+  
   <%= form_for (@item) do |f| %>
   <div class="row">
     <div class="offset-2 col-md-4 item-box">
@@ -17,15 +18,18 @@
       <p>アイテム名<br><%= f.text_field :name, class: "item_name" %></p>
 
       <%= f.fields_for :category do |c| %>
-        <span>カテゴリー　<%= c.collection_select :category_id, @categories, :id, :name, {include_blank: "--選択してください--"} %></span><br>
+        <span class="label rounded">必須</span>
+        <span>カテゴリー<%= c.collection_select :category_id, @categories, :id, :name, {include_blank: "--選択してください--"} %></span><br>
       <% end %>
 
       <%= f.fields_for :scene do |s| %>
-        <span>シーン　　　<%= s.collection_select :scene_id, @scenes, :id, :name, {include_blank: "--選択してください--"} %></span><br>
+        <span class="label rounded">必須</span>
+        <span>シーン　　<%= s.collection_select :scene_id, @scenes, :id, :name, {include_blank: "--選択してください--"} %></span><br>
       <% end %>
 
       <%= f.fields_for :season do |season| %>
-        <span>シーズン　　<%= season.collection_select :season_id, @seasons, :id, :name, {include_blank: "--選択してください--"} %></span><br>
+        <span class="label rounded">必須</span>
+        <span>シーズン　<%= season.collection_select :season_id, @seasons, :id, :name, {include_blank: "--選択してください--"} %></span><br>
       <% end %>
         
       <p></p>
