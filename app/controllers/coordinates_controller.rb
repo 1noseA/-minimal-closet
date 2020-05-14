@@ -51,7 +51,7 @@ class CoordinatesController < ApplicationController
 
   private
   def coordinate_params
-    params.require(:coordinate).permit(:image,:text,:user_id)
+    params.require(:coordinate).permit(:image, :text, :user_id)
   end
 
   def correct_user
@@ -59,6 +59,5 @@ class CoordinatesController < ApplicationController
     if current_user != user
       redirect_to user_path(current_user)
     end
-  end
-  
+  end 
 end

@@ -52,6 +52,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rubocop-airbnb'
 end
 
 group :test do
@@ -74,7 +75,6 @@ gem 'pry-byebug'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem 'rubocop-airbnb'
 gem 'font-awesome-sass'
 gem 'simple_calendar', '~> 2.0'
 

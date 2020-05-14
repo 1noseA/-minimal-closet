@@ -9,7 +9,7 @@ class FavoritesController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     @coordinate = Coordinate.find(params[:coordinate_id])
-    favorite = current_user.favorites.find_by(coordinate_id: @coordinate.id,user_id: current_user.id)
+    favorite = current_user.favorites.find_by(coordinate_id: @coordinate.id, user_id: current_user.id)
     favorite.destroy
   end
 end
