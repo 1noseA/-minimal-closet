@@ -1,6 +1,6 @@
 class CoordinatesController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user, only: [:new, :create, :edit,:update,:destroy]
+  before_action :correct_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @user = User.find(params[:user_id])
@@ -50,6 +50,7 @@ class CoordinatesController < ApplicationController
   end
 
   private
+
   def coordinate_params
     params.require(:coordinate).permit(:image, :text, :user_id)
   end
@@ -59,5 +60,5 @@ class CoordinatesController < ApplicationController
     if current_user != user
       redirect_to user_path(current_user)
     end
-  end 
+  end
 end
