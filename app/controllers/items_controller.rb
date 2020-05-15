@@ -1,21 +1,21 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user, only: [:edit,:update,:destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    #ベスト３
+    # ベスト３
     @best_ranks = Item.find(current_user.likes.group(:item_id).order('count(item_id) desc').limit(3).pluck(:item_id))
-    
-    #ワースト３
-    #着用回数０のアイテムを左外部結合で抽出
-    @unlikes = Item.left_joins(:likes).where(likes:{id: nil}, user_id: current_user.id).limit(3)
-    #@worst_ranksは着用回数１以上のアイテムを順位付け
-    #着用回数０が３以上の場合とそれ以外で分ける
-    #@unlikesと@worst_ranks合わせて３アイテム表示になるように
-    if @unlikes.count >=3
+
+    # ワースト３
+    # 着用回数０のアイテムを左外部結合で抽出
+    @unlikes = Item.left_joins(:likes).where(likes: { id: nil }, user_id: current_user.id).limit(3)
+    # @worst_ranksは着用回数１以上のアイテムを順位付け
+    # 着用回数０が３以上の場合とそれ以外で分ける
+    # @unlikesと@worst_ranks合わせて３アイテム表示になるように
+    if @unlikes.count >= 3
       @worst_ranks = @unlikes
     else
-      @worst_ranks = @unlikes.to_a + Item.find(current_user.likes.group(:item_id).order('count(item_id) asc').limit(3-@unlikes.count).pluck(:item_id))
+      @worst_ranks = @unlikes.to_a + Item.find(current_user.likes.group(:item_id).order('count(item_id) asc').limit(3 - @unlikes.count).pluck(:item_id))
     end
   end
 
@@ -76,8 +76,9 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def item_params
-    params.require(:item).permit(:item_image,:name,:text,:category_id,:scene_id,:season_id,:user_id)
+    params.require(:item).permit(:item_image, :name, :text, :category_id, :scene_id, :season_id, :user_id)
   end
 
   def correct_user
@@ -86,5 +87,4 @@ class ItemsController < ApplicationController
       redirect_to user_path(current_user)
     end
   end
-  
 end

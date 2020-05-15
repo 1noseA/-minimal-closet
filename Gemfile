@@ -52,6 +52,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rubocop-airbnb'
 end
 
 group :test do
@@ -67,14 +68,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'devise'
-gem 'kaminari','~> 1.1.1'
+gem 'kaminari', '~> 1.1.1'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'pry-byebug'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem 'rubocop-airbnb'
 gem 'font-awesome-sass'
 gem 'simple_calendar', '~> 2.0'
 

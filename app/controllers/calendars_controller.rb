@@ -47,6 +47,7 @@ class CalendarsController < ApplicationController
   end
 
   private
+
   def calendar_params
     params.require(:calendar).permit(:user_id, :day_image, :text, :start_time)
   end
