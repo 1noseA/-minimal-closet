@@ -1,0 +1,19 @@
+inherit_from:
+    - .rubocop_airbnb.yml
+ 
+AllCops:
+    Exclude:
+        - 'db/**/*'
+        - 'bin/*'
+        - 'config/**/*'
+        - 'lib/tasks/*'
+        - 'vendor/**/*'
+        - 'path/ruby'
+
+# 日本語のコメントを許可する
+Style/AsciiComments:
+  Enabled: false
+
+# 一行が長すぎるのを無視
+Metrics/LineLength:
+  Enabled: false
