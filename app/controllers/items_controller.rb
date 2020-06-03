@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     # ベスト３
@@ -20,7 +21,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def new
@@ -47,14 +47,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
     @categories = Category.all
     @scenes = Scene.all
     @seasons = Season.all
   end
 
   def update
-    @item = Item.find(params[:id])
     @item.user_id = current_user.id
     @item.category_id = params[:item][:category][:category_id]
     @item.scene_id = params[:item][:scene][:scene_id]
@@ -70,7 +68,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     redirect_to user_path(current_user), notice: "削除しました"
   end
@@ -86,5 +83,9 @@ class ItemsController < ApplicationController
     if current_user != item.user
       redirect_to user_path(current_user)
     end
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end

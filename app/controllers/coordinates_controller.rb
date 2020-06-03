@@ -1,19 +1,17 @@
 class CoordinatesController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_coordinate, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only:[:index, :show, :new, :edit]
 
   def index
-    @user = User.find(params[:user_id])
     @coordinates = @user.coordinates.page(params[:page]).per(50)
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @coordinate = Coordinate.find(params[:id])
   end
 
   def new
-    @user = User.find(params[:user_id])
     @coordinate = Coordinate.new
   end
 
@@ -29,12 +27,9 @@ class CoordinatesController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
-    @coordinate = Coordinate.find(params[:id])
   end
 
   def update
-    @coordinate = Coordinate.find(params[:id])
     @coordinate.user_id = current_user.id
     if @coordinate.update(coordinate_params)
       redirect_to user_coordinates_path(current_user), notice: "編集しました"
@@ -44,7 +39,6 @@ class CoordinatesController < ApplicationController
   end
 
   def destroy
-    @coordinate = Coordinate.find(params[:id])
     @coordinate.destroy
     redirect_to user_coordinates_path(current_user), notice: "削除しました"
   end
@@ -60,5 +54,13 @@ class CoordinatesController < ApplicationController
     if current_user != user
       redirect_to user_path(current_user)
     end
+  end
+
+  def set_coordinate
+    @coordinate = Coordinate.find(params[:id])
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end

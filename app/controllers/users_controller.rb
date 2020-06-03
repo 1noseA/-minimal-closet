@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update]
+  before_action :set_user, only: [:show, :edit, :update]
 
   def index
     @users = User.all.page(params[:page]).per(10)
@@ -9,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     # distinctで重複するレコードを削除
     @items = @user.items.select(:category_id).distinct.order(:category_id)
     @categories = Category.all
@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path(@user), notice: "編集しました"
     else
@@ -39,5 +38,9 @@ class UsersController < ApplicationController
     if current_user != user
       redirect_to user_path(current_user)
     end
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
