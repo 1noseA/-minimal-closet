@@ -8,7 +8,7 @@
       <span>メモ<%= simple_format(@calendar.text) %></span><br>
     
       <p><%= link_to "編集する", edit_user_calendar_path(current_user,@calendar),class: "btn btn-change" %> 
-      <%= link_to "削除する", user_calendar_path(current_user,@calendar),method: :delete, class: "btn btn-delete" %></p>
+      <%= link_to "削除する", user_calendar_path(current_user,@calendar),method: :delete, class: "btn btn-delete", data: { confirm: "削除しますか?" } %></p>
 
       <p><%= link_to "戻る", user_calendars_path(current_user) ,class: "btn btn-move" %></p>
     </div>
