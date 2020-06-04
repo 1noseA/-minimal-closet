@@ -1,13 +1,13 @@
 class CalendarsController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user
+  before_action :set_calendar, only: [:show, :edit, :update, :destroy]
 
   def index
     @calendars = current_user.calendars
   end
 
   def show
-    @calendar = Calendar.find(params[:id])
   end
 
   def new
@@ -27,17 +27,14 @@ class CalendarsController < ApplicationController
   end
 
   def destroy
-    @calendar = Calendar.find(params[:id])
     @calendar.destroy
     redirect_to user_calendars_path(current_user), notice: "削除しました"
   end
 
   def edit
-    @calendar = Calendar.find(params[:id])
   end
 
   def update
-    @calendar = Calendar.find(params[:id])
     @calendar.user_id = current_user.id
     if @calendar.update(calendar_params)
       redirect_to user_calendars_path(current_user), notice: "編集しました"
@@ -57,5 +54,9 @@ class CalendarsController < ApplicationController
     if current_user != user
       redirect_to user_path(current_user)
     end
+  end
+
+  def set_calendar
+    @calendar = Calendar.find(params[:id])
   end
 end

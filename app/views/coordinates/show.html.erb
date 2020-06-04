@@ -15,7 +15,7 @@
       <% if @user == current_user %>
         <p><%= link_to "編集する",edit_user_coordinate_path(current_user,@coordinate),class: "btn btn-change" %>
           
-        <%= link_to "削除する",user_coordinate_path(current_user,@coordinate),method: :delete, class: "btn btn-delete" %></p>
+        <%= link_to "削除する",user_coordinate_path(current_user,@coordinate),method: :delete, class: "btn btn-delete", data: { confirm: "削除しますか?" } %></p>
       <% end %>
 
       <p><%= link_to "戻る",user_coordinates_path(@user), class: "btn btn-move" %></p>
