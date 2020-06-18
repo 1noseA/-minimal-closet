@@ -597,4 +597,59 @@ Welcome to [1mUbuntu 18.04.4 LTS[0m!
 
 Ubuntu 18.04.4 LTS ubuntu-bionic ttyS0
 
-ubuntu-bionic login: 
+ubuntu-bionic login: [ 2572.545768] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[ 2572.545768]   Tx Queue             <0>
+[ 2572.545768]   TDH                  <14>
+[ 2572.545768]   TDT                  <17>
+[ 2572.545768]   next_to_use          <17>
+[ 2572.545768]   next_to_clean        <14>
+[ 2572.545768] buffer_info[next_to_clean]
+[ 2572.545768]   time_stamp           <10008ab5d>
+[ 2572.545768]   next_to_watch        <16>
+[ 2572.545768]   jiffies              <10008ac88>
+[ 2572.545768]   next_to_watch.status <0>
+[ 2574.559963] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[ 2574.559963]   Tx Queue             <0>
+[ 2574.559963]   TDH                  <14>
+[ 2574.559963]   TDT                  <17>
+[ 2574.559963]   next_to_use          <17>
+[ 2574.559963]   next_to_clean        <14>
+[ 2574.559963] buffer_info[next_to_clean]
+[ 2574.559963]   time_stamp           <10008ab5d>
+[ 2574.559963]   next_to_watch        <16>
+[ 2574.559963]   jiffies              <10008ae80>
+[ 2574.559963]   next_to_watch.status <0>
+[ 2576.575530] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[ 2576.575530]   Tx Queue             <0>
+[ 2576.575530]   TDH                  <14>
+[ 2576.575530]   TDT                  <17>
+[ 2576.575530]   next_to_use          <17>
+[ 2576.575530]   next_to_clean        <14>
+[ 2576.575530] buffer_info[next_to_clean]
+[ 2576.575530]   time_stamp           <10008ab5d>
+[ 2576.575530]   next_to_watch        <16>
+[ 2576.575530]   jiffies              <10008b078>
+[ 2576.575530]   next_to_watch.status <0>
+[ 2578.590982] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[ 2578.590982]   Tx Queue             <0>
+[ 2578.590982]   TDH                  <14>
+[ 2578.590982]   TDT                  <17>
+[ 2578.590982]   next_to_use          <17>
+[ 2578.590982]   next_to_clean        <14>
+[ 2578.590982] buffer_info[next_to_clean]
+[ 2578.590982]   time_stamp           <10008ab5d>
+[ 2578.590982]   next_to_watch        <16>
+[ 2578.590982]   jiffies              <10008b270>
+[ 2578.590982]   next_to_watch.status <0>
+[ 2580.605108] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[ 2580.605108]   Tx Queue             <0>
+[ 2580.605108]   TDH                  <14>
+[ 2580.605108]   TDT                  <17>
+[ 2580.605108]   next_to_use          <17>
+[ 2580.605108]   next_to_clean        <14>
+[ 2580.605108] buffer_info[next_to_clean]
+[ 2580.605108]   time_stamp           <10008ab5d>
+[ 2580.605108]   next_to_watch        <16>
+[ 2580.605108]   jiffies              <10008b468>
+[ 2580.605108]   next_to_watch.status <0>
+[ 2580.701583] e1000 0000:00:03.0 enp0s3: Reset adapter
