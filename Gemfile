@@ -81,7 +81,6 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'font-awesome-sass'
 gem 'simple_calendar', '~> 2.0'
-gem 'activeadmin'
 
 gem 'dotenv-rails'
 group :production do
